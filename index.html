@@ -48,13 +48,13 @@
                 </div><!--//tagline-->
                 <br />
 	             <div class="main-search-box pt-3 pb-4 d-inline-block">
-	                 <form class="form-inline search-form justify-content-center" action="" method="get">
+	                 <div class="form-inline search-form justify-content-center">
 	            
-			            <input type="text" placeholder="Buscar área..." name="search" class="form-control search-input">
+			            <input type="text" id="txtBuscar" placeholder="Buscar área..." name="search" class="form-control search-input">
 			            
-			            <button type="submit" class="btn search-btn" value="Search"><i class="fas fa-search"></i></button>
+			            <button type="submit" onclick="busqueda()" class="btn search-btn" value="Search"><i class="fas fa-search"></i></button>
 			            
-			        </form>
+			        </div>
 	             </div>
 
                  
@@ -64,15 +64,9 @@
         
         <section class="cards-section text-center">
             <div class="container">
-                <h2 class="title">Getting started is easy!</h2>
-                <div class="intro">
-                    <p>Welcome to prettyDocs. This landing page is an example of how you can use a card view to present segments of your documentation. You can customise the icon fonts based on your needs.</p>
-                    <div class="cta-container">
-                        <a class="btn btn-primary btn-cta" href="https://themes.3rdwavemedia.com/bootstrap-templates/startup/prettydocs-free-bootstrap-theme-for-developers-and-startups/" target="_blank"><i class="fas fa-cloud-download-alt"></i> Download Now</a>
-                    </div><!--//cta-container-->
-                </div><!--//intro-->
+
                 <div id="cards-wrapper" class="cards-wrapper row">
-                    <div class="item item-green col-lg-4 col-6">
+                    <div class="item item-green col-lg-4 col-6 clase">
                         <div class="item-inner">
                             <div class="icon-holder">
                                 <i class="icon fa fa-paper-plane"></i>
@@ -82,7 +76,7 @@
                             <a class="link" href="start.html"><span></span></a>
                         </div><!--//item-inner-->
                     </div><!--//item-->
-                    <div class="item item-pink item-2 col-lg-4 col-6">
+                    <div class="item item-pink item-2 col-lg-4 col-6 clase">
                         <div class="item-inner">
                             <div class="icon-holder">
                                 <span aria-hidden="true" class="icon icon_puzzle_alt"></span>
@@ -92,7 +86,7 @@
                             <a class="link" href="components.html"><span></span></a>
                         </div><!--//item-inner-->
                     </div><!--//item-->
-                    <div class="item item-blue col-lg-4 col-6">
+                    <div class="item item-blue col-lg-4 col-6 clase">
                         <div class="item-inner">
                             <div class="icon-holder">
                                 <span aria-hidden="true" class="icon icon_datareport_alt"></span>
@@ -102,7 +96,7 @@
                             <a class="link" href="charts.html"><span></span></a>
                         </div><!--//item-inner-->
                     </div><!--//item-->
-                    <div class="item item-purple col-lg-4 col-6">
+                    <div class="item item-purple col-lg-4 col-6 clase">
                         <div class="item-inner">
                             <div class="icon-holder">
                                 <span aria-hidden="true" class="icon icon_lifesaver"></span>
@@ -112,7 +106,7 @@
                             <a class="link" href="faqs.html"><span></span></a>
                         </div><!--//item-inner-->
                     </div><!--//item-->
-                    <div class="item item-primary col-lg-4 col-6">
+                    <div class="item item-primary col-lg-4 col-6 clase">
                         <div class="item-inner">
                             <div class="icon-holder">
                                 <span aria-hidden="true" class="icon icon_genius"></span>
@@ -122,7 +116,7 @@
                             <a class="link" href="showcase.html"><span></span></a>
                         </div><!--//item-inner-->
                     </div><!--//item-->
-                    <div class="item item-orange col-lg-4 col-6">
+                    <div class="item item-orange col-lg-4 col-6 clase">
                         <div class="item-inner">
                             <div class="icon-holder">
                                 <span aria-hidden="true" class="icon icon_gift"></span>
@@ -152,7 +146,23 @@
     <script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>     
     <script type="text/javascript" src="assets/plugins/stickyfill/dist/stickyfill.min.js"></script>                                                                
     <script type="text/javascript" src="assets/js/main.js"></script>
-    
+    <script>
+        function busqueda() {
+            // Declare variables
+            var input = document.getElementById("txtBuscar");
+            var filter = input.value.toLowerCase();
+            var nodes = document.getElementById("cards-wrapper").children;
+            //nodes.style.display = "none";
+
+            for (i = 0; i < nodes.length; i++) {
+                if (nodes[i].innerText.toLowerCase().includes(filter)) {
+                    nodes[i].style.display = "block";
+                } else {
+                    nodes[i].style.display = "none";
+                }
+            }
+            }
+    </script>
 </body>
 </html> 
 
