@@ -22,17 +22,17 @@
 
 </head> 
 
-<body class="landing-page">   
-	
-	<!-- GITHUB BUTTON JS -->
+<body class="landing-page">
+
+    <!-- GITHUB BUTTON JS -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>
-     
+
     <!--FACEBOOK LIKE BUTTON JAVASCRIPT SDK-->
     <div id="fb-root"></div>
     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v6.0&appId=994736563909741&autoLogAppEvents=1"></script>
-    
+
     <div class="page-wrapper">
-        
+
         <!-- ******Header****** -->
         <header class="header text-center">
             <div class="container">
@@ -44,25 +44,24 @@
                 </div><!--//branding-->
                 <div class="tagline">
                     <p>Repositorio de Web Services Implementados</p>
-                    
+
                 </div><!--//tagline-->
                 <br />
-	             <div class="main-search-box pt-3 pb-4 d-inline-block">
-	                 <form class="form-inline search-form justify-content-center" action="" method="get">
-	            
-			            <input type="text" placeholder="Buscar área..." name="search" class="form-control search-input">
-			            
-			            <button type="submit" class="btn search-btn" value="Search"><i class="fas fa-search"></i></button>
-			            
-			        </form>
-	             </div>
+                <div class="main-search-box pt-3 pb-4 d-inline-block">
+                    <form class="form-inline search-form justify-content-center" action="" method="get">
 
-                 
-                
+                        <input type="text" id="txtBuscar" placeholder="Buscar área..." name="search" class="form-control search-input">
+
+                        <button type="submit" class="btn search-btn" value="Search"><i class="fas fa-search"></i></button>
+
+                    </form>
+                </div>
+
+
+
             </div><!--//container-->
         </header><!--//header-->
-        
-		<!--12 primeros -->
+        <!--12 primeros -->
         <section class="cards-section text-center">
             <div class="container">
                 <h2 class="title">Áreas de Web Services</h2>
@@ -133,8 +132,8 @@
                             <a class="link" href="license.html"><span></span></a>
                         </div><!--//item-inner-->
                     </div><!--//item-->
-            
-   	
+
+
                     <div class="item item-green col-lg-4 col-6">
                         <div class="item-inner">
                             <div class="icon-holder">
@@ -195,9 +194,8 @@
                             <a class="link" href="license.html"><span></span></a>
                         </div><!--//item-inner-->
                     </div><!--//item-->
-           
-		 				<!--//12 Segundos-->
-			
+                    <!--//12 Segundos-->
+
                     <div class="item item-green col-lg-4 col-6">
                         <div class="item-inner">
                             <div class="icon-holder">
@@ -258,8 +256,8 @@
                             <a class="link" href="license.html"><span></span></a>
                         </div><!--//item-inner-->
                     </div><!--//item-->
-        
-                  <div class="item item-green col-lg-4 col-6">
+
+                    <div class="item item-green col-lg-4 col-6">
                         <div class="item-inner">
                             <div class="icon-holder">
                                 <i class="icon fa fa-paper-plane"></i>
@@ -320,26 +318,41 @@
                         </div><!--//item-inner-->
                     </div><!--//item-->
                 </div><!--//cards-->
-			</div><!--//intro-->
-		</div><!--//container-->
-        </section><!--//cards-section-->
+            </div><!--//intro-->
+    </div><!--//container-->
+    </section><!--//cards-section-->
     </div><!--//page-wrapper-->
-   
+
     <footer class="footer text-center">
         <div class="container">
             <!--/* This template is free as long as you keep the footer attribution link. If you'd like to use the template without the attribution link, you can buy the commercial license via our website: themes.3rdwavemedia.com Thank you for your support. :) */-->
             <small class="copyright">Designed with <i class="fas fa-heart"></i> by <a href="https://themes.3rdwavemedia.com/" target="_blank">Xiaoying Riley</a> for developers</small>
-            
+
         </div><!--//container-->
     </footer><!--//footer-->
-    
-     
-    <!-- Main Javascript -->          
+    <!-- Main Javascript -->
     <script type="text/javascript" src="assets/plugins/jquery-3.4.1.min.js"></script>
-    <script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>     
-    <script type="text/javascript" src="assets/plugins/stickyfill/dist/stickyfill.min.js"></script>                                                                
+    <script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="assets/plugins/stickyfill/dist/stickyfill.min.js"></script>
     <script type="text/javascript" src="assets/js/main.js"></script>
-    
+    <script>
+        function busqueda() {
+            // Declare variables
+            var input = document.getElementById("txtBuscar");
+            var filter = input.value.toLowerCase();
+            var nodes = document.getElementById("cards-wrapper").children;
+            //nodes.style.display = "none";
+
+            for (i = 0; i < nodes.length; i++) {
+                if (nodes[i].innerText.toLowerCase().includes(filter)) {
+                    nodes[i].style.display = "block";
+                }
+                else {
+                    nodes[i].style.display = "none";
+                }
+            }
+        }
+    </script>
 </body>
 </html> 
 
