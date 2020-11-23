@@ -1,0 +1,297 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Web Services</title>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <!-- FontAwesome JS -->
+    <script defer src="assets/fontawesome/js/all.js"></script>
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">
+    <!-- Plugins CSS -->
+    <link rel="stylesheet" href="assets/plugins/prism/prism.css">
+    <link rel="stylesheet" href="assets/plugins/elegant_font/css/style.css">
+
+    <!-- Theme CSS -->
+    <link id="theme-style" rel="stylesheet" href="assets/css/styles.css">
+
+</head>
+
+<body class="body-green">
+    <div class="page-wrapper">
+        <!-- ******Header****** -->
+        <header id="header" class="header">
+            <div class="container">
+                <div class="branding">
+                    <h1 class="logo">
+                        <a href="index.html">
+                            <span aria-hidden="true" class="icon_documents_alt icon"></span>
+                            <span class="text-highlight">Smartcity</span><span class="text-bold">HYO</span>
+                        </a>
+                    </h1>
+
+                </div><!--//branding-->
+
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item active">Usuario</li>
+                </ol>
+
+                <div class="top-search-box">
+                    <form class="form-inline search-form justify-content-center" action="" method="get">
+
+                        <input type="text" placeholder="Search..." name="search" class="form-control search-input">
+
+                        <button type="submit" class="btn search-btn" value="Search"><i class="fas fa-search"></i></button>
+
+                    </form>
+                </div>
+
+            </div><!--//container-->
+        </header><!--//header-->
+        <div class="doc-wrapper">
+            <div class="container">
+                <div id="doc-header" class="doc-header text-center">
+                    <h1 class="doc-title"><i class="icon fa fa-user"></i>Usuario</h1>
+                    <div class="meta"><i class="far fa-clock"></i> Última Modificación: 25 de Noviembre, 2020</div>
+                </div><!--//doc-header-->
+                <div class="doc-body row">
+                    <div class="doc-content col-md-9 col-12 order-1">
+                        <div class="content-inner">
+
+
+                            <section id="code-section" class="doc-section">
+                                <h2 class="section-title">Web API's</h2>
+                                <div class="callout-block callout-success">
+                                    <div class="icon-holder">
+                                        <i class="fas fa-thumbs-up"></i>
+                                    </div><!--//icon-holder-->
+                                    <div class="content">
+                                        <h4 class="callout-title">Tip:</h4>
+                                        <p>Usar los links proporcionados en el documento/Utilizar los cuerpos de documento para el método POST</p>
+                                    </div><!--//content-->
+                                </div>
+                                <div id="insert" class="section-block">
+                                    <div class="code-block">
+                                        <h3 class="logo">Insertar Usuario <span class="doc-title callout-success">POST</span></h3>
+                                        <h5 class="callout-title">http://smartcityhyo.tk/api/Usuario/Insert_Usuario.php</h5>
+                                        <pre><code class="language-css">{
+    "US_Nombres": "Justin",
+    "US_Apellidos": "Bieber",
+    "US_Direccion": "Jr. las Violetas 120",
+    "US_Fecha_Nacimiento": "2020-02-01 00:00:00",
+    "US_Nacionalidad": "Peruana",
+    "US_Telefono": "9456123450",
+    "US_Email": "jb@hotmail.com",
+    "US_Contrasena": "jb123",
+    "US_Tipo": "uno"
+}
+</code></pre>
+                                    </div><!--//code-block-->
+                                </div><!--//section-block-->
+                                <div id="insert_ind" class="section-block">
+                                    <div class="code-block">
+                                        <h3>Insertar Usuario Incidentes <span class="doc-title callout-success">POST</span></h3>
+                                        <h5 class="callout-title">http://smartcityhyo.tk/api/Usuario/Insert_Usuario_Incidente.php</h5>
+                                        <pre><code class="language-css">{
+    "US_Nombres": "Justin",
+    "US_Apellidos": "Bieber",
+    "US_Email": "jb@hotmail.com",
+    "US_Contrasena": "jb123"
+}
+</code></pre>
+                                    </div><!--//code-block-->
+                                </div><!--//section-block-->
+                                <div id="consult_post" class="section-block">
+                                    <div class="code-block">
+                                        <h3>Consultar Usuario por ID <span class="doc-title callout-success">POST</span></h3>
+                                        <h5 class="callout-title">http://smartcityhyo.tk/api/Usuario/Consulta_Usuario_ID.php</h5>
+                                        <pre><code class="language-css">{
+    "ID_Usuario": "1"
+}
+</code></pre>
+                                    </div><!--//code-block-->
+                                </div><!--//section-block-->
+                                <div id="consult_get" class="section-block">
+                                    <div class="code-block">
+                                        <h3>Consultar Usuario por ID <span class="doc-title callout-info">GET</span></h3>
+                                        <h5 class="callout-title">http://smartcityhyo.tk/api/Consultar_Usuario.php?ID_Usuario=1</h5>
+                                        <pre><code class="language-css">Ingresar por parametro: ID_Usuario=?
+</code></pre>
+                                    </div><!--//code-block-->
+                                </div><!--//section-block-->
+                                <div id="consultem_post" class="section-block">
+                                    <div class="code-block">
+                                        <h3>Consultar Usuario por Email <span class="doc-title callout-success">POST</span></h3>
+                                        <h5 class="callout-title">http://smartcityhyo.tk/api/Usuario/Consulta_Usuario_Email.php</h5>
+                                        <pre><code class="language-css">{
+    "US_Email": "juan@gmail.com"
+}
+</code></pre>
+                                    </div><!--//code-block-->
+                                </div><!--//section-block-->
+                                <div id="consultem_get" class="section-block">
+                                    <div class="code-block">
+                                        <h3>Consultar Usuario por Email <span class="doc-title callout-info">GET</span></h3>
+                                        <h5 class="callout-title">http://smartcityhyo.tk/api/buscar_Email.php?US_Email=juan@gmail.com</h5>
+                                        <pre><code class="language-css">Ingresar por parametro: US_Email=xxx@gmail.com
+</code></pre>
+                                    </div><!--//code-block-->
+                                </div><!--//section-block-->
+                                <div id="list" class="section-block">
+                                    <div class="code-block">
+                                        <h3>Listar Usuario <span class="doc-title callout-info">GET</span></h3>
+                                        <h5 class="callout-title">http://smartcityhyo.tk/api/Lista_Usuario.php</h5>
+                                        <pre><code class="language-css">No se ingresan parametros
+</code></pre>
+                                    </div><!--//code-block-->
+                                </div><!--//section-block-->
+                                <div id="update" class="section-block">
+                                    <div class="code-block">
+                                        <h3 class="logo">Update Usuario <span class="doc-title callout-success">POST</span></h3>
+                                        <h5 class="callout-title">http://smartcityhyo.tk/api/Usuario/Update_Usuario.php</h5>
+                                        <pre><code class="language-css">{
+    "ID_Usuario": 1,
+    "US_Nombres": "Justin",
+    "US_Apellidos": "Bieber",
+    "US_Direccion": "Jr. las Violetas 120",
+    "US_Fecha_Nacimiento": "2020-02-01 00:00:00",
+    "US_Nacionalidad": "Peruana",
+    "US_Telefono": "9456123450",
+    "US_Email": "jb@hotmail.com"
+}
+</code></pre>
+                                    </div><!--//code-block-->
+                                </div><!--//section-block-->
+                                <div id="login" class="section-block">
+                                    <div class="code-block">
+                                        <h3 class="logo">Login <span class="doc-title callout-success">POST</span></h3>
+                                        <h5 class="callout-title">http://smartcityhyo.tk/api/Usuario/login.php</h5>
+                                        <pre><code class="language-css">{
+    "US_Email": "jb@hotmail.com",
+    "US_Contrasena": "1234556"
+}
+</code></pre>
+                                    </div><!--//code-block-->
+                                </div><!--//section-block-->
+                                <div id="password" class="section-block">
+                                    <div class="code-block">
+                                        <h3 class="logo">Cambiar Password <span class="doc-title callout-success">POST</span></h3>
+                                        <h5 class="callout-title">http://smartcityhyo.tk/api/Usuario/change_password.php</h5>
+                                        <pre><code class="language-css">{
+    "ID_Email": "jb@hotmail.com",
+    "US_Contrasena": "1234556"
+}
+</code></pre>
+                                    </div><!--//code-block-->
+                                </div><!--//section-block-->
+
+                                <section id="tables-section" class="doc-section">
+                                    <h2 class="section-title">Módulos que lo utilizan</h2>
+                                    <div id="modulos" class="section-block">
+                                        <br />
+                                        <div class="table-responsive">
+                                            <table class="table">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Módulo</th>
+
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>Identidad Cultural</td>
+
+                                                    </tr>
+                                                    <tr>
+                                                        <td scope="row">Registro de incidencia de Empresas de Transporte</td>
+
+                                                    </tr>
+                                                    <tr>
+                                                        <td scope="row">Deteccion de actos delictivos</td>
+
+                                                    </tr>
+                                                    <tr>
+                                                        <td scope="row">Participación Ciudadana</td>
+
+                                                    </tr>
+                                                    <tr>
+                                                        <td scope="row">Contacto entre el Turista y la Ciudad</td>
+
+                                                    </tr>
+                                                    <tr>
+                                                        <td scope="row">Movilidad Urbana - Rutas de Transporte</td>
+
+                                                    </tr>
+                                                    <tr>
+                                                        <td scope="row">Sistema de Cuidado de Parques y Jardines</td>
+
+                                                    </tr>
+                                                    <tr>
+                                                        <td scope="row">Movilidad Urbana - Control de Semáforos</td>
+
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div><!--//table-responsive-->
+
+                                    </div><!--//section-block-->
+                                </section><!--//doc-section-->
+                            </section><!--//doc-section-->
+                        </div><!--//content-inner-->
+                    </div><!--//doc-content-->
+                    <div class="doc-sidebar col-md-3 col-12 order-0 d-none d-md-flex">
+                        <div id="doc-nav" class="doc-nav">
+
+                            <nav id="doc-menu" class="nav doc-menu flex-column sticky">
+
+                                <a class="nav-link scrollto" href="#code-section">Servicios</a>
+                                <nav class="doc-sub-menu nav flex-column">
+                                    <a class="nav-link scrollto" href="#insert">Insertar Usuario</a>
+                                    <a class="nav-link scrollto" href="#insert_ind">Insertar Usuario Incidentes</a>
+                                    <a class="nav-link scrollto" href="#consult_post">Consultar Usuario por ID (POST)</a>
+                                    <a class="nav-link scrollto" href="#consult_get">Consultar Usuario por ID (GET)</a>
+                                    <a class="nav-link scrollto" href="#consultem_post">Consultar Usuario por Email(POST)</a>
+                                    <a class="nav-link scrollto" href="#consultem_get">Consultar Usuario por Email(GET)</a>
+                                    <a class="nav-link scrollto" href="#list">Listar Usuario</a>
+                                    <a class="nav-link scrollto" href="#update">Update Usuario</a>
+                                    <a class="nav-link scrollto" href="#login">Login</a>
+                                    <a class="nav-link scrollto" href="#password">Cambiar Password</a>
+                                    <a class="nav-link scrollto" href="#modulos">Módulos que lo utilizan</a>
+                                </nav><!--//nav-->
+
+                            </nav><!--//doc-menu-->
+
+                        </div>
+                    </div><!--//doc-sidebar-->
+                </div><!--//doc-body-->
+            </div><!--//container-->
+        </div><!--//doc-wrapper-->
+
+
+    </div><!--//page-wrapper-->
+
+    <footer id="footer" class="footer text-center">
+        <div class="container">
+            <!--/* This template is free as long as you keep the footer attribution link. If you'd like to use the template without the attribution link, you can buy the commercial license via our website: themes.3rdwavemedia.com Thank you for your support. :) */-->
+            <small class="copyright">Creado por el grupo de <a href="#">Web Services</a></small>
+
+        </div><!--//container-->
+    </footer><!--//footer-->
+    <!-- Main Javascript -->
+    <script type="text/javascript" src="assets/plugins/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="assets/plugins/prism/prism.js"></script>
+    <script type="text/javascript" src="assets/plugins/jquery-scrollTo/jquery.scrollTo.min.js"></script>
+    <script type="text/javascript" src="assets/plugins/stickyfill/dist/stickyfill.min.js"></script>
+    <script type="text/javascript" src="assets/js/main.js"></script>
+
+</body>
+</html>
+
