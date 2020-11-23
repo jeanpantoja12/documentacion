@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Bootstrap 4 project documentation theme for developers</title>
+    <title>Web Services</title>
     <!-- Meta -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -97,110 +97,102 @@
                                 </div><!--//section-block-->
                                 <div id="insert_ind" class="section-block">
                                     <div class="code-block">
-                                        <h3>Insertar Usuario</h3>
-                                        <h5 class="callout-title">http://smartcityhyo.tk/api/Usuario/Insert_Usuario.php</h5>
+                                        <h3>Insertar Usuario Incidentes <span class="doc-title callout-success">POST</span></h3>
+                                        <h5 class="callout-title">http://smartcityhyo.tk/api/Usuario/Insert_Usuario_Incidente.php</h5>
                                         <pre><code class="language-css">{
+    "US_Nombres": "Justin",
+    "US_Apellidos": "Bieber",
+    "US_Email": "jb@hotmail.com",
+    "US_Contrasena": "jb123"
+}
+</code></pre>
+                                    </div><!--//code-block-->
+                                </div><!--//section-block-->
+                                <div id="consult_post" class="section-block">
+                                    <div class="code-block">
+                                        <h3>Consultar Usuario por ID <span class="doc-title callout-success">POST</span></h3>
+                                        <h5 class="callout-title">http://smartcityhyo.tk/api/Usuario/Consulta_Usuario_ID.php</h5>
+                                        <pre><code class="language-css">{
+    "ID_Usuario": "1"
+}
+</code></pre>
+                                    </div><!--//code-block-->
+                                </div><!--//section-block-->
+                                <div id="consult_get" class="section-block">
+                                    <div class="code-block">
+                                        <h3>Consultar Usuario por ID <span class="doc-title callout-info">GET</span></h3>
+                                        <h5 class="callout-title">http://smartcityhyo.tk/api/Consultar_Usuario.php?ID_Usuario=1</h5>
+                                        <pre><code class="language-css">Ingresar por parametro: ID_Usuario=?
+</code></pre>
+                                    </div><!--//code-block-->
+                                </div><!--//section-block-->
+                                <div id="consultem_post" class="section-block">
+                                    <div class="code-block">
+                                        <h3>Consultar Usuario por Email <span class="doc-title callout-success">POST</span></h3>
+                                        <h5 class="callout-title">http://smartcityhyo.tk/api/Usuario/Consulta_Usuario_Email.php</h5>
+                                        <pre><code class="language-css">{
+    "US_Email": "juan@gmail.com"
+}
+</code></pre>
+                                    </div><!--//code-block-->
+                                </div><!--//section-block-->
+                                <div id="consultem_get" class="section-block">
+                                    <div class="code-block">
+                                        <h3>Consultar Usuario por Email <span class="doc-title callout-info">GET</span></h3>
+                                        <h5 class="callout-title">http://smartcityhyo.tk/api/buscar_Email.php?US_Email=juan@gmail.com</h5>
+                                        <pre><code class="language-css">Ingresar por parametro: US_Email=xxx@gmail.com
+</code></pre>
+                                    </div><!--//code-block-->
+                                </div><!--//section-block-->
+                                <div id="list" class="section-block">
+                                    <div class="code-block">
+                                        <h3>Listar Usuario <span class="doc-title callout-info">GET</span></h3>
+                                        <h5 class="callout-title">http://smartcityhyo.tk/api/Lista_Usuario.php</h5>
+                                        <pre><code class="language-css">No se ingresan parametros
+</code></pre>
+                                    </div><!--//code-block-->
+                                </div><!--//section-block-->
+                                <div id="update" class="section-block">
+                                    <div class="code-block">
+                                        <h3 class="logo">Update Usuario <span class="doc-title callout-success">POST</span></h3>
+                                        <h5 class="callout-title">http://smartcityhyo.tk/api/Usuario/Update_Usuario.php</h5>
+                                        <pre><code class="language-css">{
+    "ID_Usuario": 1,
     "US_Nombres": "Justin",
     "US_Apellidos": "Bieber",
     "US_Direccion": "Jr. las Violetas 120",
     "US_Fecha_Nacimiento": "2020-02-01 00:00:00",
     "US_Nacionalidad": "Peruana",
     "US_Telefono": "9456123450",
-    "US_Email": "jb@hotmail.com",
-    "US_Contrasena": "jb123",
-    "US_Tipo": "uno"
+    "US_Email": "jb@hotmail.com"
 }
 </code></pre>
                                     </div><!--//code-block-->
                                 </div><!--//section-block-->
-                                <div id="sass" class="section-block">
+                                <div id="login" class="section-block">
                                     <div class="code-block">
-                                        <h6>SCSS Code Example</h6>
-                                        <pre><code class="language-css">@mixin transform($property) {
-  -webkit-transform: $property;
-      -ms-transform: $property;
-          transform: $property;
+                                        <h3 class="logo">Login <span class="doc-title callout-success">POST</span></h3>
+                                        <h5 class="callout-title">http://smartcityhyo.tk/api/Usuario/login.php</h5>
+                                        <pre><code class="language-css">{
+    "US_Email": "jb@hotmail.com",
+    "US_Contrasena": "1234556"
 }
+</code></pre>
+                                    </div><!--//code-block-->
+                                </div><!--//section-block-->
+                                <div id="password" class="section-block">
+                                    <div class="code-block">
+                                        <h3 class="logo">Cambiar Password <span class="doc-title callout-success">POST</span></h3>
+                                        <h5 class="callout-title">http://smartcityhyo.tk/api/Usuario/change_password.php</h5>
+                                        <pre><code class="language-css">{
+    "ID_Email": "jb@hotmail.com",
+    "US_Contrasena": "1234556"
+}
+</code></pre>
+                                    </div><!--//code-block-->
+                                </div><!--//section-block-->
 
-.box { @include transform(rotate(30deg)); }</code></pre>
-                                    </div><!--//code-block-->
-                                </div><!--//section-block-->
-                                <div id="less" class="section-block">
-                                    <div class="code-block">
-                                        <h6>LESS Code Example</h6>
-                                        <pre><code class="language-css">@base: #f04615;
-@width: 0.5;
 
-.class {
-  width: percentage(@width); // returns &#x60;50%&#x60;
-  color: saturate(@base, 5%);
-  background-color: spin(lighten(@base, 25%), 8);
-}</code></pre>
-                                    </div><!--//code-block-->
-                                </div><!--//section-block-->
-                                <div id="javascript" class="section-block">
-                                    <div class="code-block">
-                                        <h6>JavaScript Code Example</h6>
-                                        <pre><code class="language-javascript">&lt;script&gt; 
-    function myFunction(a, b) { 
-        return a * b; 
-    } 
-    
-    document.getElementById(&quot;demo&quot;).innerHTML = myFunction(4, 3); 
-&lt;/script&gt;</code></pre>
-                                    </div><!--//code-block-->
-                                </div><!--//section-block-->
-                                <div id="python" class="section-block">
-                                    <div class="code-block">
-                                        <h6>Python Code Example</h6>
-                                        <pre><code class="language-python">&gt;&gt;&gt; x = int(input(&quot;
-Please enter an integer: &quot;)) Please enter an integer: 42 
-&gt;&gt;&gt; if x &lt; 0: 
-... x = 0 
-... print('Negative changed to zero') 
-... elif x == 0: 
-... print('Zero') 
-... elif x == 1: 
-... print('Single') 
-... else: 
-... print('More') 
-... More</code></pre>
-                                    </div><!--//code-block-->
-                                </div><!--//section-block-->
-                                <div id="php" class="section-block">
-                                    <div class="code-block">
-                                        <h6>PHP Code Example</h6>
-                                        <pre><code class="language-php">&lt;?php 
-$txt = &quot;Hello world!&quot;; 
-$x = 5; 
-$y = 10.5; 
-
-echo $txt; 
-echo &quot;&lt;br&gt;&quot;; 
-echo $x; 
-echo &quot;&lt;br&gt;&quot;; 
-echo $y; 
-?&gt;</code></pre>
-                                    </div><!--//code-block-->
-                                </div><!--//section-block-->
-                                <div id="handlebars" class="section-block">
-                                    <div class="code-block">
-                                        <h6>Handlebars Code Example</h6>
-                                        <pre><code class="language-handlebars">Handlebars.registerHelper('list', function(items, options) { 
-  var out = &quot;&lt;ul&gt;&quot;; 
-  
-  for(var i=0, l=items.length; i&lt;l; i++) { 
-    out = out + &quot;&lt;li&gt;&quot; + options.fn(items[i]) + &quot;&lt;/li&gt;&quot;; 
-  } 
-  
-  return out + &quot;&lt;/ul&gt;&quot;; 
-});</code></pre>
-                                    </div><!--//code-block-->
-                                    <div class="code-block">
-                                        <h6>Git Code Example</h6>
-                                        <pre><code class="language-git">$ git add Documentation.txt</code></pre>
-                                    </div><!--//code-block-->
-                                </div><!--//section-block-->
                             </section><!--//doc-section-->
                             <section id="callouts-section" class="doc-section">
                                 <h2 class="section-title">Callouts</h2>
@@ -272,11 +264,7 @@ echo $y;
                                     <a class="nav-link scrollto" href="#login">Login</a>
                                     <a class="nav-link scrollto" href="#password">Cambiar Password</a>
                                 </nav><!--//nav-->
-                                <a class="nav-link scrollto" href="#callouts-section">Callouts</a>
-                                <a class="nav-link scrollto" href="#tables-section">Tables</a>
-                                <a class="nav-link scrollto" href="#buttons-section">Buttons</a>
-                                <a class="nav-link scrollto" href="#video-section">Video</a>
-                                <a class="nav-link scrollto" href="#icons-section">Icons</a>
+
                             </nav><!--//doc-menu-->
 
                         </div>
@@ -285,43 +273,13 @@ echo $y;
             </div><!--//container-->
         </div><!--//doc-wrapper-->
 
-        <div id="promo-block" class="promo-block">
-            <div class="container">
-                <div class="promo-block-inner">
-                    <h3 class="promo-title text-center"><i class="fas fa-heart"></i> <a href="https://themes.3rdwavemedia.com/bootstrap-templates/portfolio/instance-bootstrap-portfolio-theme-for-developers/" target="_blank">Are you an ambitious and entrepreneurial developer?</a></h3>
-                    <div class="row">
-                        <div class="figure-holder col-lg-5 col-md-6 col-12">
-                            <div class="figure-holder-inner">
-                                <a href="https://themes.3rdwavemedia.com/bootstrap-templates/portfolio/instance-bootstrap-portfolio-theme-for-developers/" target="_blank"><img class="img-fluid" src="assets/images/demo/instance-promo.jpg" alt="Instance Theme" /></a>
-                                <a class="mask" href="https://themes.3rdwavemedia.com/bootstrap-templates/portfolio/instance-bootstrap-portfolio-theme-for-developers/"><i class="icon fa fa-heart pink"></i></a>
-
-                            </div>
-                        </div><!--//figure-holder-->
-                        <div class="content-holder col-lg-7 col-md-6 col-12">
-                            <div class="content-holder-inner">
-                                <div class="desc">
-                                    <h4 class="content-title"><strong> Instance - Bootstrap 4 Portfolio Theme for Aspiring Developers</strong></h4>
-                                    <p>Check out <a href="https://themes.3rdwavemedia.com/bootstrap-templates/portfolio/instance-bootstrap-portfolio-theme-for-developers/" target="_blank">Instance</a> - a Bootstrap personal portfolio theme I created for developers. The UX design is focused on selling a developer’s skills and experience to potential employers or clients, and has <strong class="highlight">all the winning ingredients to get you hired</strong>. It’s not only a HTML site template but also a marketing framework for you to <strong class="highlight">build an impressive online presence with a high conversion rate</strong>. </p>
-                                    <p><strong class="highlight">[Tip for developers]:</strong> If your project is Open Source, you can use this area to promote your other projects or hold third party adverts like Bootstrap and FontAwesome do!</p>
-                                    <a class="btn btn-cta" href="https://themes.3rdwavemedia.com/bootstrap-templates/portfolio/instance-bootstrap-portfolio-theme-for-developers/" target="_blank"><i class="fas fa-external-link-alt"></i> View Demo</a>
-
-                                </div><!--//desc-->
-
-
-                                <div class="author"><a href="https://themes.3rdwavemedia.com">Xiaoying Riley</a></div>
-                            </div><!--//content-holder-inner-->
-                        </div><!--//content-holder-->
-                    </div><!--//row-->
-                </div><!--//promo-block-inner-->
-            </div><!--//container-->
-        </div><!--//promo-block-->
 
     </div><!--//page-wrapper-->
 
     <footer id="footer" class="footer text-center">
         <div class="container">
             <!--/* This template is free as long as you keep the footer attribution link. If you'd like to use the template without the attribution link, you can buy the commercial license via our website: themes.3rdwavemedia.com Thank you for your support. :) */-->
-            <small class="copyright">Designed with <i class="fas fa-heart"></i> by <a href="https://themes.3rdwavemedia.com/" target="_blank">Xiaoying Riley</a> for developers</small>
+            <small class="copyright">Creado por el grupo de <a href="#">Web Services</a></small>
 
         </div><!--//container-->
     </footer><!--//footer-->
