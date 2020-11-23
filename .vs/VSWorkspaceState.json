@@ -3,12 +3,9 @@
     "",
     "\\assets",
     "\\assets\\plugins\\bootstrap",
-    "\\assets\\plugins\\elegant_font",
-    "\\assets\\plugins\\elegant_font\\images\\PNG",
-    "\\assets\\plugins\\elegant_font\\images\\SVG",
-    "\\assets\\plugins\\stickyfill\\test",
-    "\\assets\\plugins\\stickyfill\\types"
+    "\\assets\\plugins\\bootstrap\\css",
+    "\\assets\\plugins\\elegant_font"
   ],
-  "SelectedNode": "\\assets",
+  "SelectedNode": "\\favicon.ico",
   "PreviewInSolutionExplorer": false
 }
