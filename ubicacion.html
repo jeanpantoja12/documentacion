@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <title>Web Services</title>
@@ -23,7 +23,7 @@
 
 </head>
 
-<body class="body-blue">
+<body class="body-purple">
     <div class="page-wrapper">
         <!-- ******Header****** -->
         <header id="header" class="header">
@@ -40,7 +40,7 @@
 
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <li class="breadcrumb-item active">Incidente</li>
+                    <li class="breadcrumb-item active">Ubicación</li>
                 </ol>
 
                 <div class="top-search-box">
@@ -58,7 +58,7 @@
         <div class="doc-wrapper">
             <div class="container">
                 <div id="doc-header" class="doc-header text-center">
-                    <h1 class="doc-title"><i class="icon fa fa-exclamation-triangle"></i>Incidente</h1>
+                    <h1 class="doc-title"><i class="icon fa fa-map-signs"></i>Ubicación</h1>
                     <div class="meta"><i class="far fa-clock"></i> Última Modificación: 25 de Noviembre, 2020</div>
                 </div><!--//doc-header-->
                 <div class="doc-body row">
@@ -77,81 +77,90 @@
                                         <p>Usar los links proporcionados en el documento/Utilizar los cuerpos de documento para el método POST</p>
                                     </div><!--//content-->
                                 </div>
-                                <div class="callout-block callout-success">
-                                    <div class="icon-holder">
-                                        <i class="fas fa-thumbs-up"></i>
-                                    </div><!--//icon-holder-->
-                                    <div class="content">
-                                        <h4 class="callout-title">Tip 2:</h4>
-                                        <p>
-                                            Para los servicios con fotografía, el formato de envio en postman es desde la sección <span style="color:black;"><b>body>>form-data</b></span>.
-                                            Después de ingresar, se debe especificar el campo de la fotografia con un tipo de dato <span style="color:black;">
-                                                <b>FILE</b>
-                                            </span>
-                                        </p>
-                                    </div><!--//content-->
-                                </div>
                                 <div id="insert" class="section-block">
+                                    <div class="code-block">
+                                        <h3 class="logo">Agregar Ubicación<span class="doc-title callout-success">POST</span></h3>
+                                        <h5 class="callout-title">
+                                            http://smartcityhyo.tk/api/Ubicacion/Insert_ubicacion.php
 
-                                    <div class="code-block">
-                                        <h3 class="logo">Agregar Incidente <span class="doc-title callout-success">POST</span></h3>
-                                        <h5 class="callout-title">http://smartcityhyo.tk/api/Incidente/Insertar_Incidente.php</h5>
-                                        <div class="table-responsive">
-                                            <table class="table">
-                                                <thead>
-                                                    <tr>
-                                                        <th>Key</th>
-                                                        <th>Value</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <td>ID_Vehiculo</td>
-                                                        <td>1</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td scope="row">ID_Usuario</td>
-                                                        <td>1</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td scope="row">ind_Descripcion</td>
-                                                        <td>Robo a mano armada</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td scope="row">ind_Fecha_Incidente</td>
-                                                        <td>2020-02-01 00:00:00</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td scope="row">ind_Tipo_Incidente</td>
-                                                        <td>Robo</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td scope="row">incidente_image</td>
-                                                        <td><b>FILE</b></td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div><!--//table-responsive-->
-                                    </div><!--//code-block-->
-                                </div><!--//section-block-->
+                                        </h5>
+                                        <pre><code class="language-css">{
+  
+    "UB_Via": "Camino 2",
+    "UB_Estado": "A",
+    "UB_Nombre": "Prueba",
+    "UB_Longitud": "0.22",
+    "UB_Latitud": "3.0255",
+    "UB_ViasAlternas": "Camino 4"
 
-                                <div id="consult_id" class="section-block">
-                                    <div class="code-block">
-                                        <h3>Consultar incidente por ID <span class="doc-title callout-info">GET</span></h3>
-                                        <h5 class="callout-title">http://smartcityhyo.tk/api/Incidente/Consultar_Incidentes.php?ID_Incidente=1</h5>
-                                        <pre><code class="language-css">Ingresar por parametro: ID_Incidente=?
-</code></pre>
-                                    </div><!--//code-block-->
-                                </div><!--//section-block-->
-                                <div id="consult_veh" class="section-block">
-                                    <div class="code-block">
-                                        <h3>Consultar incidente por ID_Vehiculo <span class="doc-title callout-info">GET</span></h3>
-                                        <h5 class="callout-title">http://smartcityhyo.tk/api/Incidente/Consultar_Incidente_Fecha.php?ID_Vehiculo=18</h5>
-                                        <pre><code class="language-css">Ingresar por parametro: ID_Vehiculo=?
+    
+}
 </code></pre>
                                     </div><!--//code-block-->
                                 </div><!--//section-block-->
 
+
+                                <div id="list" class="section-block">
+                                    <div class="code-block">
+                                        <h3 class="logo">Listar Ubicación <span class="doc-title callout-success">GET</span></h3>
+                                        <h5 class="callout-title">
+                                         http://smartcityhyo.tk/api/Ubicacion/List_ubicacion.php
+                                        </h5>
+                                         </h5> 
+                                         <pre><code class="language-css">No se ingresan parametros
+</code></pre>
+                                    </div><!--//code-block-->
+                                </div><!--//section-block-->
+                               
+                                <div id="delete" class="section-block">
+                                    <div class="code-block">
+                                        <h3 class="logo">Eliminar Ubicación<span class="doc-title callout-success">POST</span></h3>
+                                        <h5 class="callout-title">
+                                         http://smartcityhyo.tk/api/Ubicacion/Eliminar_Ubicacion.php
+                                        </h5>
+                                         </h5> <pre><code class="language-css">Ingresar por parametro: ID_Ubicacion=?
+</code></pre>
+                                    </div><!--//code-block-->
+                                </div><!--//section-block-->
+
+
+                                <div id="ConsulID" class="section-block">
+                                    <div class="code-block">
+                                        <h3>Consultar Ubicación por ID <span class="doc-title callout-info"> GET </span></h3>
+                                        <h5 class="callout-title">
+                                            http://smartcityhyo.tk/api/Ubicacion/Consultar_Ubicacion_ID.php?
+                                        </h5>
+                                        </h5> <pre><code class="language-css">Ingresar por parametro: ID_Ubicacion=?
+</code></pre>
+                                    </div><!--//code-block-->
+                                </div><!--//section-block-->
+
+
+                                <div id="update" class="section-block">
+                                    <div class="code-block">
+                                        <h3 class="logo">Actualizar Ubicación<span class="doc-title callout-success">POST</span></h3>
+                                        <h5 class="callout-title">
+                                          http://smartcityhyo.tk/api/Ubicacion/Update_Ubicacion.php
+                                        </h5>
+                                          <pre><code class="language-css">{
+    "ID_Ubicacion": 2,
+    "UB_Via": "Camino 1",
+    "UB_Estado": "B",
+    "UB_Nombre": "Prueba2",
+    "UB_Longitud": "0.22",
+    "UB_Latitud": "3.0255",
+    "UB_ViasAlternas": "Camino 6"
+    
+}
+</code></pre>
+                                    </div><!--//code-block-->
+                                </div><!--//section-block-->
+                                
+
+                                 
+                                
+
+                                 
 
                                 <section id="tables-section" class="doc-section">
                                     <h2 class="section-title">Módulos que lo utilizan</h2>
@@ -167,10 +176,14 @@
                                                 </thead>
                                                 <tbody>
                                                     <tr>
-                                                        <td scope="row">Registro de incidencia de Empresas de Transporte</td>
+                                                        <td>Movilidad Urbana </td>
 
                                                     </tr>
+                                                    <tr>
+                                                        <td>Control de Semáforos</td>
 
+                                                    </tr>
+                                                   
                                                 </tbody>
                                             </table>
                                         </div><!--//table-responsive-->
@@ -187,9 +200,12 @@
 
                                 <a class="nav-link scrollto" href="#code-section">Servicios</a>
                                 <nav class="doc-sub-menu nav flex-column">
-                                    <a class="nav-link scrollto" href="#insert">Agregar Incidente</a>
-                                    <a class="nav-link scrollto" href="#consult_id">Consultar Incidente por ID</a>
-                                    <a class="nav-link scrollto" href="#consult_veh">Consultar Incidente por Vehiculo</a>
+                                    <a class="nav-link scrollto" href="#insert">Agregar Ubicación</a>
+                                    <a class="nav-link scrollto" href="#list">Listar Ubicación</a>
+                                    <a class="nav-link scrollto" href="#delete">Eliminar Ubicación</a>
+                                    <a class="nav-link scrollto" href="#ConsulID">Consultar Ubicación por ID </a>
+                                    <a class="nav-link scrollto" href="#update">Actualizar Ubicación</a>
+                                                                                           
                                     <a class="nav-link scrollto" href="#modulos">Módulos que lo utilizan</a>
                                 </nav><!--//nav-->
 
@@ -221,4 +237,3 @@
 
 </body>
 </html>
-

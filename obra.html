@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <title>Web Services</title>
@@ -40,7 +40,7 @@
 
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <li class="breadcrumb-item active">Lugar Turístico </li>
+                    <li class="breadcrumb-item active">Obra</li>
                 </ol>
 
                 <div class="top-search-box">
@@ -58,7 +58,7 @@
         <div class="doc-wrapper">
             <div class="container">
                 <div id="doc-header" class="doc-header text-center">
-                    <h1 class="doc-title"><i class="icon fa fa-map-signs"></i>Lugar Turístico</h1>
+                    <h1 class="doc-title"><i class="icon fa fa-map-signs"></i>Obra</h1>
                     <div class="meta"><i class="far fa-clock"></i> Última Modificación: 25 de Noviembre, 2020</div>
                 </div><!--//doc-header-->
                 <div class="doc-body row">
@@ -77,95 +77,39 @@
                                         <p>Usar los links proporcionados en el documento/Utilizar los cuerpos de documento para el método POST</p>
                                     </div><!--//content-->
                                 </div>
-                                <div id="insert" class="section-block">
+                                <div id="consulID" class="section-block">
                                     <div class="code-block">
-                                        <h3 class="logo">Agregar Lugar Turístico <span class="doc-title callout-success">POST</span></h3>
+                                        <h3 class="logo">Consultar Obra por ID <span class="doc-title callout-success">GET</span></h3>
                                         <h5 class="callout-title">
-                                            http://smartcityhyo.tk/api/LugarTuristico/Insert_lugar_turistico.php
+                                            http://smartcityhyo.tk/api/Obra/Consult_obra_id.php
 
-                                        </h5>
-                                        <pre><code class="language-css">{
-    "LT_Nombre": "La Huaycha",
-    "LT_Descripcion": "Prueba",
-    "LT_URL_Map": "www.google.com",
-    "ID_Distrito": 1,
-    "LT_Hora_Inicio": "2020-02-01 00:00:00",
-    "LT_Hora_Fin": "2020-02-01 00:00:00",
-    "LT_Latitud": 4,
-    "LT_Longitud": 6
-}
+                                        </h5> <pre><code class="language-css">Ingresar por parametro: ID_Obra=?
 </code></pre>
+
                                     </div><!--//code-block-->
                                 </div><!--//section-block-->
-                                <div id="update" class="section-block">
+                                <div id="consultNombre" class="section-block">
                                     <div class="code-block">
-                                        <h3 class="logo">Update Lugar Turístico <span class="doc-title callout-success">POST</span></h3>
+                                        <h3 class="logo">Consultar obra por nombre<span class="doc-title callout-success">GET</span></h3>
                                         <h5 class="callout-title">
-                                            http://smartcityhyo.tk/api/LugarTuristico/Update_Lugar_Turistico.php
+                                           http://smartcityhyo.tk/api/Obra/Consult_obra_nombre.php
                                         </h5>
-                                        <pre><code class="language-css">{
-    "ID_Lugar_Turistico": 10,
-    "LT_Nombre": "La Huaycha",
-    "LT_Descripcion": "Prueba",
-    "LT_URL_Map": "www.google.com",
-    "ID_Distrito": 1,
-    "LT_Hora_Inicio": "2020-02-01 00:00:00",
-    "LT_Hora_Fin": "2020-02-01 00:00:00",
-    "LT_Latitud": 4,
-    "LT_Longitud": 6
-}
+                                         </h5> <pre><code class="language-css">Ingresar por parametro: OBR_Nombre=?
 </code></pre>
                                     </div><!--//code-block-->
                                 </div><!--//section-block-->
-                                <div id="consult" class="section-block">
-                                    <div class="code-block">
-                                        <h3>Consultar Lugar Turístico por ID <span class="doc-title callout-info">GET</span></h3>
-                                        <h5 class="callout-title">http://smartcityhyo.tk/api/LugarTuristico/Consultar_Lugar_Turistico_ID.php</h5>
-                                        <pre><code class="language-css">Ingresar por parametro: ID_Lugar_Turistico=?
-</code></pre>
-                                    </div><!--//code-block-->
-                                </div><!--//section-block-->
+                                
                                 <div id="list" class="section-block">
                                     <div class="code-block">
-                                        <h3>Listar Lugares Turísticos <span class="doc-title callout-info">GET</span></h3>
+                                        <h3>Listar Obras <span class="doc-title callout-info">GET</span></h3>
                                         <h5 class="callout-title">
-                                            http://smartcityhyo.tk/api/LugarTuristico/Listar_lugar_turistico.php
+                                            http://smartcityhyo.tk/api/Obra/Listar_Obra.php
                                         </h5>
                                         <pre><code class="language-css">No se ingresan parametros
 </code></pre>
                                     </div><!--//code-block-->
                                 </div><!--//section-block-->
-                                <div id="list_vid" class="section-block">
-                                    <div class="code-block">
-                                        <h3>Listar Videos de Lugares Turísticos <span class="doc-title callout-info">GET</span></h3>
-                                        <h5 class="callout-title">
-                                            http://smartcityhyo.tk/api/VideosTuristicos/Listar_Video.php
-                                        </h5>
-                                        <pre><code class="language-css">No se ingresan parametros
-</code></pre>
-                                    </div><!--//code-block-->
-                                </div><!--//section-block-->
-                                <div id="consult_vid" class="section-block">
-                                    <div class="code-block">
-                                        <h3>Consultar Video Lugar Turistico por ID <span class="doc-title callout-info">GET</span></h3>
-                                        <h5 class="callout-title">
-                                            http://smartcityhyo.tk/api/VideosTuristicos/ConsultaVideoPorIdLT.php?ID_Lugar_Turistico=9</h5>
-                                            <pre><code class="language-css">Ingresar por parametro: ID_Lugar_Turistico=?
-</code></pre>
-</div><!--//code-block-->
-                                </div><!--//section-block-->
-                                <div id="delete" class="section-block">
-                                    <div class="code-block">
-                                        <h3>Eliminar Lugar Turístico <span class="doc-title callout-success">POST</span></h3>
-                                        <h5 class="callout-title">
-                                            http://smartcityhyo.tk/api/LugarTuristico/Eliminar_LugarTuristico.php
-                                        </h5>
-                                        <pre><code class="language-css">{
-    "ID_Lugar_Turistico": "1"
-}
-</code></pre>
-                                    </div><!--//code-block-->
-                                </div><!--//section-block-->
+                               
 
                                 <section id="tables-section" class="doc-section">
                                     <h2 class="section-title">Módulos que lo utilizan</h2>
@@ -181,14 +125,10 @@
                                                 </thead>
                                                 <tbody>
                                                     <tr>
-                                                        <td>Identidad Cultural</td>
+                                                        <td>Participación Cuidadana</td>
 
                                                     </tr>
-                                                    <tr>
-                                                        <td scope="row">Contacto entre el Turista y la Ciudad</td>
-
-                                                    </tr>
-
+                                                   
                                                 </tbody>
                                             </table>
                                         </div><!--//table-responsive-->
@@ -205,13 +145,9 @@
 
                                 <a class="nav-link scrollto" href="#code-section">Servicios</a>
                                 <nav class="doc-sub-menu nav flex-column">
-                                    <a class="nav-link scrollto" href="#insert">Agregar Lugar Turístico</a>
-                                    <a class="nav-link scrollto" href="#update">Update Lugar Turístico</a>
-                                    <a class="nav-link scrollto" href="#consult">Consultar Lugar Turistico por ID</a>
-                                    <a class="nav-link scrollto" href="#list">Listar Lugares Turístico</a>
-                                    <a class="nav-link scrollto" href="#list_vid">Listar Videos de Lugares</a>
-                                    <a class="nav-link scrollto" href="#consult_vid">Consultar Videos de Lugares</a>
-                                    <a class="nav-link scrollto" href="#delete">Eliminar Lugar Turístico</a>
+                                    <a class="nav-link scrollto" href="#consulID">Consultar Obra por ID</a>
+                                    <a class="nav-link scrollto" href="#consultNombre">Consultar obra por nombre</a>
+                                    <a class="nav-link scrollto" href="#list">Listar Obras</a>
                                     <a class="nav-link scrollto" href="#modulos">Módulos que lo utilizan</a>
                                 </nav><!--//nav-->
 
@@ -243,4 +179,3 @@
 
 </body>
 </html>
-

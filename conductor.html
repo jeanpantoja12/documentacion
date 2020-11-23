@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <title>Web Services</title>
@@ -23,7 +23,7 @@
 
 </head>
 
-<body class="body-pink">
+<body class="body-purple">
     <div class="page-wrapper">
         <!-- ******Header****** -->
         <header id="header" class="header">
@@ -40,7 +40,7 @@
 
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <li class="breadcrumb-item active">Vehiculo</li>
+                    <li class="breadcrumb-item active">Conductor</li>
                 </ol>
 
                 <div class="top-search-box">
@@ -58,7 +58,7 @@
         <div class="doc-wrapper">
             <div class="container">
                 <div id="doc-header" class="doc-header text-center">
-                    <h1 class="doc-title"><i class="icon fa fa-car"></i> Vehiculo</h1>
+                    <h1 class="doc-title"><i class="icon fa fa-map-signs"></i>Conductor</h1>
                     <div class="meta"><i class="far fa-clock"></i> Última Modificación: 25 de Noviembre, 2020</div>
                 </div><!--//doc-header-->
                 <div class="doc-body row">
@@ -77,33 +77,111 @@
                                         <p>Usar los links proporcionados en el documento/Utilizar los cuerpos de documento para el método POST</p>
                                     </div><!--//content-->
                                 </div>
-                                <div id="consult_placa" class="section-block">
-                                    <div class="code-block">
-                                        <h3 class="logo">Consultar Vehiculo por Placa <span class="doc-title callout-info">GET</span></h3>
-                                        <h5 class="callout-title">
-                                            http://smartcityhyo.tk/api/Vehiculo/Consultar_Vehiculo_Placa.php?VEH_Placa=AUK921
-                                        </h5>
-                                        <pre><code class="language-css">Ingresar por parametro: VEH_Placa=?
-</code></pre>
-                                    </div><!--//code-block-->
-                                </div><!--//section-block-->
-
                                 <div id="insert" class="section-block">
                                     <div class="code-block">
-                                        <h3 class="logo">Insertar Vehiculo <span class="doc-title callout-success">POST</span></h3>
-                                        <h5 class="callout-title">http://smartcityhyo.tk/api/Usuario/Update_Usuario.php</h5>
+                                        <h3 class="logo">Agregar Conductor<span class="doc-title callout-success">POST</span></h3>
+                                        <h5 class="callout-title">
+                                            http://smartcityhyo.tk/api/Conductor/Insertar_Conductor.php
+
+                                        </h5>
                                         <pre><code class="language-css">{
-    "VEH_Placa": ASD123,
-    "VEH_Color": "Rojo",
-    "VEH_Modelo": "Sedan",
-    "VEH_Marca": "Toyota",
-    "ID_Tipo_Vehiculo": 1,
-    "ID_Conductor": 1
+    "CON_Nombre": "Diomenes",
+    "CON_Apellidos": "Buendia",
+    "CON_Telefono": "992665661",
+    "CON_Direccion": "Av. Los insurgentes 209",
+    "CON_Licencia": "1235asd",
+    "ID_Empresa_Transp": 1,
+    "CON_Latitud": "1.200",
+    "CON_Longitud": "-36.00",
+    "CON_Status":, "0"
+    "CON_FCM": "0",
+    "CON_Email": "buendia@hotmail.com",
+    "CON_Contrasena": "123456"
+
+    
 }
 </code></pre>
                                     </div><!--//code-block-->
                                 </div><!--//section-block-->
 
+                                <div id="login" class="section-block">
+                                    <div class="code-block">
+                                        <h3 class="logo">login<span class="doc-title callout-success">POST</span></h3>
+                                        <h5 class="callout-title">
+                                            http://smartcityhyo.tk/api/Conductor/login.php
+
+                                        </h5>
+                                        <pre><code class="language-css">{
+    "email": "buendia@hotmail.com",
+    "password": "123456"
+
+    
+}
+</code></pre>
+                                    </div><!--//code-block-->
+                                </div><!--//section-block-->
+                                <div id="delete" class="section-block">
+                                    <div class="code-block">
+                                        <h3 class="logo">Eliminar Conductor<span class="doc-title callout-success">POST</span></h3>
+                                        <h5 class="callout-title">
+                                         http://smartcityhyo.tk/api/Conductor/Eliminar_Conductor.php
+                                        </h5>
+                                         </h5> <pre><code class="language-css">Ingresar por parametro: ID_Conductor=?
+</code></pre>
+                                    </div><!--//code-block-->
+                                </div><!--//section-block-->
+
+                                <div id="update" class="section-block">
+                                    <div class="code-block">
+                                        <h3 class="logo">Update Conductor<span class="doc-title callout-success">POST</span></h3>
+                                        <h5 class="callout-title">
+                                          http://smartcityhyo.tk/api/Conductor/Update_Conductor.php
+                                        </h5>
+                                          <pre><code class="language-css">{
+    "CON_Nombre": "Carlos",
+    "CON_Apellidos": "Buendia",
+    "CON_Telefono": "999652221",
+    "CON_Direccion": "Jr Los insurgentes 200",
+    "CON_Licencia": "1235asd",
+    "ID_Empresa_Transp": 1,
+    "CON_Latitud": "10.200",
+    "CON_Longitud": "-38.00",
+    "CON_Status":, "0"
+    "CON_FCM": "0",
+    "CON_Email": "buendia@hotmail.com",
+    "CON_Contrasena": "123456"
+
+    
+}
+</code></pre>
+                                    </div><!--//code-block-->
+                                </div><!--//section-block-->
+                                
+
+                                 <div id="lisCond" class="section-block">
+                                    <div class="code-block">
+                                        <h3 class="logo">Listar Conductor <span class="doc-title callout-success">GET</span></h3>
+                                        <h5 class="callout-title">
+                                         http://smartcityhyo.tk/api/Conductor/List_Conductor.php
+                                        </h5>
+                                         </h5> 
+                                         <pre><code class="language-css">No se ingresan parametros
+</code></pre>
+                                    </div><!--//code-block-->
+                                </div><!--//section-block-->
+                                <div id="listID" class="section-block">
+                                    <div class="code-block">
+                                        <h3>Consultar Conductor por ID <span class="doc-title callout-info"> GET </span></h3>
+                                        <h5 class="callout-title">
+                                            http://smartcityhyo.tk/api/Conductor/Consultar_Conductor_ID.php
+                                        </h5>
+                                        </h5> <pre><code class="language-css">Ingresar por parametro: ID_Conductor=?
+</code></pre>
+                                    </div><!--//code-block-->
+                                </div><!--//section-block-->
+
+
+                                 
 
                                 <section id="tables-section" class="doc-section">
                                     <h2 class="section-title">Módulos que lo utilizan</h2>
@@ -119,13 +197,10 @@
                                                 </thead>
                                                 <tbody>
                                                     <tr>
-                                                        <td scope="row">Registro de incidencia de Empresas de Transporte</td>
+                                                        <td>Movilidad Urbana - Rutas de Transporte</td>
 
                                                     </tr>
-                                                    <tr>
-                                                        <td scope="row">Movilidad Urbana - Rutas de Transporte</td>
-
-                                                    </tr>
+                                                   
                                                 </tbody>
                                             </table>
                                         </div><!--//table-responsive-->
@@ -142,8 +217,13 @@
 
                                 <a class="nav-link scrollto" href="#code-section">Servicios</a>
                                 <nav class="doc-sub-menu nav flex-column">
-                                    <a class="nav-link scrollto" href="#consult_placa">Consultar Vehiculo por Placa</a>
-                                    <a class="nav-link scrollto" href="#insert">Insertar Vehiculo</a>
+                                    <a class="nav-link scrollto" href="#insert">Agregar Conductor</a>
+                                    <a class="nav-link scrollto" href="#login">Login</a>
+                                    <a class="nav-link scrollto" href="#delete">Eliminar Conductor</a>
+                                    <a class="nav-link scrollto" href="#update">Update Conductor</a>
+                                    <a class="nav-link scrollto" href="#lisCond">Listar Conductor</a>
+                                    <a class="nav-link scrollto" href="#listID">Consultar Conductor por ID</a>
+                                                                     
                                     <a class="nav-link scrollto" href="#modulos">Módulos que lo utilizan</a>
                                 </nav><!--//nav-->
 
@@ -175,4 +255,3 @@
 
 </body>
 </html>
-

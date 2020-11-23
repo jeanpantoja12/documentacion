@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <title>Web Services</title>
@@ -23,7 +23,7 @@
 
 </head>
 
-<body class="body-green">
+<body class="body-purple">
     <div class="page-wrapper">
         <!-- ******Header****** -->
         <header id="header" class="header">
@@ -40,7 +40,7 @@
 
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <li class="breadcrumb-item active">Usuario</li>
+                    <li class="breadcrumb-item active">Comentario Obra</li>
                 </ol>
 
                 <div class="top-search-box">
@@ -58,7 +58,7 @@
         <div class="doc-wrapper">
             <div class="container">
                 <div id="doc-header" class="doc-header text-center">
-                    <h1 class="doc-title"><i class="icon fa fa-user"></i>Usuario</h1>
+                    <h1 class="doc-title"><i class="icon fa fa-map-signs"></i>Comentario Obra</h1>
                     <div class="meta"><i class="far fa-clock"></i> Última Modificación: 25 de Noviembre, 2020</div>
                 </div><!--//doc-header-->
                 <div class="doc-body row">
@@ -79,114 +79,101 @@
                                 </div>
                                 <div id="insert" class="section-block">
                                     <div class="code-block">
-                                        <h3 class="logo">Insertar Usuario <span class="doc-title callout-success">POST</span></h3>
-                                        <h5 class="callout-title">http://smartcityhyo.tk/api/Usuario/Insert_Usuario.php</h5>
+                                        <h3 class="logo">Agregar Comentario Obra <span class="doc-title callout-success">POST</span></h3>
+                                        <h5 class="callout-title">
+                                            http://smartcityhyo.tk/api/ComentarioObra/insertar_comentario.php
+
+                                        </h5>
                                         <pre><code class="language-css">{
-    "US_Nombres": "Justin",
-    "US_Apellidos": "Bieber",
-    "US_Direccion": "Jr. las Violetas 120",
-    "US_Fecha_Nacimiento": "2020-02-01 00:00:00",
-    "US_Nacionalidad": "Peruana",
-    "US_Telefono": "9456123450",
-    "US_Email": "jb@hotmail.com",
-    "US_Contrasena": "jb123",
-    "US_Tipo": "uno"
+    "ID_Obra": 1,
+    "COM_Obra": "Buena Obra",
+    "COM_Calificacion": 4,
+    "ID_Usuario": 13,
+    "COM_Foto": "url foto"
+    
 }
 </code></pre>
                                     </div><!--//code-block-->
                                 </div><!--//section-block-->
-                                <div id="insert_ind" class="section-block">
+                                <div id="consultID" class="section-block">
                                     <div class="code-block">
-                                        <h3>Insertar Usuario Incidentes <span class="doc-title callout-success">POST</span></h3>
-                                        <h5 class="callout-title">http://smartcityhyo.tk/api/Usuario/Insert_Usuario_Incidente.php</h5>
-                                        <pre><code class="language-css">{
-    "US_Nombres": "Justin",
-    "US_Apellidos": "Bieber",
-    "US_Email": "jb@hotmail.com",
-    "US_Contrasena": "jb123"
-}
+                                        <h3 class="logo">Consultar Comentario por ID<span class="doc-title callout-success">GET</span></h3>
+                                        <h5 class="callout-title">
+                                          http://smartcityhyo.tk/api/ComentarioObra/Consultar_Comentario_ID.php?
+                                        </h5>
+                                         </h5> <pre><code class="language-css">Ingresar por parametro: ID_Comentario=?
 </code></pre>
                                     </div><!--//code-block-->
                                 </div><!--//section-block-->
-                                <div id="consult_post" class="section-block">
+                                <div id="consultNombre" class="section-block">
                                     <div class="code-block">
-                                        <h3>Consultar Usuario por ID <span class="doc-title callout-success">POST</span></h3>
-                                        <h5 class="callout-title">http://smartcityhyo.tk/api/Usuario/Consulta_Usuario_ID.php</h5>
-                                        <pre><code class="language-css">{
-    "ID_Usuario": "1"
-}
+                                        <h3 class="logo">Consultar Comentarios por Usuario<span class="doc-title callout-success">GET</span></h3>
+                                        <h5 class="callout-title">
+                                         http://smartcityhyo.tk/api/ComentarioObra/Consultar_Comentario_User.php
+                                        </h5>
+                                         </h5> <pre><code class="language-css">Ingresar por parametro: ID_Usuario=?
 </code></pre>
                                     </div><!--//code-block-->
                                 </div><!--//section-block-->
-                                <div id="consult_get" class="section-block">
+
+                                 <div id="consultObra" class="section-block">
                                     <div class="code-block">
-                                        <h3>Consultar Usuario por ID <span class="doc-title callout-info">GET</span></h3>
-                                        <h5 class="callout-title">http://smartcityhyo.tk/api/Consultar_Usuario.php?ID_Usuario=1</h5>
-                                        <pre><code class="language-css">Ingresar por parametro: ID_Usuario=?
+                                        <h3 class="logo">Consultar comentarios por Obra<span class="doc-title callout-success">GET</span></h3>
+                                        <h5 class="callout-title">
+                                         http://smartcityhyo.tk/api/ComentarioObra/Consultar_Comentario_Obra.php
+                                        </h5>
+                                         </h5> <pre><code class="language-css">Ingresar por parametro: ID_Obra=?
 </code></pre>
                                     </div><!--//code-block-->
                                 </div><!--//section-block-->
-                                <div id="consultem_post" class="section-block">
+                                <div id="listID" class="section-block">
                                     <div class="code-block">
-                                        <h3>Consultar Usuario por Email <span class="doc-title callout-success">POST</span></h3>
-                                        <h5 class="callout-title">http://smartcityhyo.tk/api/Usuario/Consulta_Usuario_Email.php</h5>
-                                        <pre><code class="language-css">{
-    "US_Email": "juan@gmail.com"
-}
+                                        <h3>Listar Comentarios por ID <span class="doc-title callout-info">GET</span></h3>
+                                        <h5 class="callout-title">
+                                            http://smartcityhyo.tk/api/ComentarioObra/listar_comentario_por_id_obra.php
+                                        </h5>
+                                        </h5> <pre><code class="language-css">Ingresar por parametro: ID_Obra=?
 </code></pre>
                                     </div><!--//code-block-->
                                 </div><!--//section-block-->
-                                <div id="consultem_get" class="section-block">
+
+
+                                 <div id="list" class="section-block">
                                     <div class="code-block">
-                                        <h3>Consultar Usuario por Email <span class="doc-title callout-info">GET</span></h3>
-                                        <h5 class="callout-title">http://smartcityhyo.tk/api/buscar_Email.php?US_Email=juan@gmail.com</h5>
-                                        <pre><code class="language-css">Ingresar por parametro: US_Email=xxx@gmail.com
-</code></pre>
-                                    </div><!--//code-block-->
-                                </div><!--//section-block-->
-                                <div id="list" class="section-block">
-                                    <div class="code-block">
-                                        <h3>Listar Usuario <span class="doc-title callout-info">GET</span></h3>
-                                        <h5 class="callout-title">http://smartcityhyo.tk/api/Lista_Usuario.php</h5>
+                                        <h3>Listar Comentarios <span class="doc-title callout-info">GET</span></h3>
+                                        <h5 class="callout-title">
+                                            http://smartcityhyo.tk/api/ComentarioObra/listar_comentario.php
+                                        </h5>
                                         <pre><code class="language-css">No se ingresan parametros
 </code></pre>
                                     </div><!--//code-block-->
                                 </div><!--//section-block-->
-                                <div id="update" class="section-block">
+                               
+                               <div id="update" class="section-block">
                                     <div class="code-block">
-                                        <h3 class="logo">Update Usuario <span class="doc-title callout-success">POST</span></h3>
-                                        <h5 class="callout-title">http://smartcityhyo.tk/api/Usuario/Update_Usuario.php</h5>
+                                        <h3 class="logo">Update Comentario <span class="doc-title callout-success">POST</span></h3>
+                                        <h5 class="callout-title">
+                                            http://smartcityhyo.tk/api/ComentarioObra/Update_Comentario.php
+                                        </h5>
                                         <pre><code class="language-css">{
-    "ID_Usuario": 1,
-    "US_Nombres": "Justin",
-    "US_Apellidos": "Bieber",
-    "US_Direccion": "Jr. las Violetas 120",
-    "US_Fecha_Nacimiento": "2020-02-01 00:00:00",
-    "US_Nacionalidad": "Peruana",
-    "US_Telefono": "9456123450",
-    "US_Email": "jb@hotmail.com"
+    "ID_Comentario": 3,
+    "ID_Obra": 10,
+    "COM_Obra": "Huancayo",
+    "COM_Calificacion": "Prueba",
+    "ID_Usuario": 13
 }
 </code></pre>
                                     </div><!--//code-block-->
                                 </div><!--//section-block-->
-                                <div id="login" class="section-block">
+
+                                 <div id="delete" class="section-block">
                                     <div class="code-block">
-                                        <h3 class="logo">Login <span class="doc-title callout-success">POST</span></h3>
-                                        <h5 class="callout-title">http://smartcityhyo.tk/api/Usuario/login.php</h5>
+                                        <h3>Eliminar Comentario Obra <span class="doc-title callout-success">POST</span></h3>
+                                        <h5 class="callout-title">
+                                            http://smartcityhyo.tk/api/ComentarioObra/Eliminar_Comentario_Obra.php
+                                        </h5>
                                         <pre><code class="language-css">{
-    "US_Email": "jb@hotmail.com",
-    "US_Contrasena": "1234556"
-}
-</code></pre>
-                                    </div><!--//code-block-->
-                                </div><!--//section-block-->
-                                <div id="password" class="section-block">
-                                    <div class="code-block">
-                                        <h3 class="logo">Cambiar Password <span class="doc-title callout-success">POST</span></h3>
-                                        <h5 class="callout-title">http://smartcityhyo.tk/api/Usuario/change_password.php</h5>
-                                        <pre><code class="language-css">{
-    "ID_Email": "jb@hotmail.com",
-    "US_Contrasena": "1234556"
+    "ID_Comentario": "3"
 }
 </code></pre>
                                     </div><!--//code-block-->
@@ -206,37 +193,10 @@
                                                 </thead>
                                                 <tbody>
                                                     <tr>
-                                                        <td>Identidad Cultural</td>
+                                                        <td>Participación Cuidadana</td>
 
                                                     </tr>
-                                                    <tr>
-                                                        <td scope="row">Registro de incidencia de Empresas de Transporte</td>
-
-                                                    </tr>
-                                                    <tr>
-                                                        <td scope="row">Deteccion de actos delictivos</td>
-
-                                                    </tr>
-                                                    <tr>
-                                                        <td scope="row">Participación Ciudadana</td>
-
-                                                    </tr>
-                                                    <tr>
-                                                        <td scope="row">Contacto entre el Turista y la Ciudad</td>
-
-                                                    </tr>
-                                                    <tr>
-                                                        <td scope="row">Movilidad Urbana - Rutas de Transporte</td>
-
-                                                    </tr>
-                                                    <tr>
-                                                        <td scope="row">Sistema de Cuidado de Parques y Jardines</td>
-
-                                                    </tr>
-                                                    <tr>
-                                                        <td scope="row">Movilidad Urbana - Control de Semáforos</td>
-
-                                                    </tr>
+                                                   
                                                 </tbody>
                                             </table>
                                         </div><!--//table-responsive-->
@@ -253,16 +213,14 @@
 
                                 <a class="nav-link scrollto" href="#code-section">Servicios</a>
                                 <nav class="doc-sub-menu nav flex-column">
-                                    <a class="nav-link scrollto" href="#insert">Insertar Usuario</a>
-                                    <a class="nav-link scrollto" href="#insert_ind">Insertar Usuario Incidentes</a>
-                                    <a class="nav-link scrollto" href="#consult_post">Consultar Usuario por ID (POST)</a>
-                                    <a class="nav-link scrollto" href="#consult_get">Consultar Usuario por ID (GET)</a>
-                                    <a class="nav-link scrollto" href="#consultem_post">Consultar Usuario por Email(POST)</a>
-                                    <a class="nav-link scrollto" href="#consultem_get">Consultar Usuario por Email(GET)</a>
-                                    <a class="nav-link scrollto" href="#list">Listar Usuario</a>
-                                    <a class="nav-link scrollto" href="#update">Update Usuario</a>
-                                    <a class="nav-link scrollto" href="#login">Login</a>
-                                    <a class="nav-link scrollto" href="#password">Cambiar Password</a>
+                                    <a class="nav-link scrollto" href="#insert">Agregar Comentario Obra</a>
+                                    <a class="nav-link scrollto" href="#consultID">Consultar Comentario por ID</a>
+                                    <a class="nav-link scrollto" href="#consultNombre">Consultar Comentarios por Usuario</a>
+                                    <a class="nav-link scrollto" href="#consultObra">Consultar comentarios por Obra</a>
+                                    <a class="nav-link scrollto" href="#listID">Listar Comentarios por ID</a>
+                                    <a class="nav-link scrollto" href="#list">Listar Comentarios</a>
+                                    <a class="nav-link scrollto" href="#update">Update Comentario</a>
+                                  
                                     <a class="nav-link scrollto" href="#modulos">Módulos que lo utilizan</a>
                                 </nav><!--//nav-->
 
@@ -294,4 +252,3 @@
 
 </body>
 </html>
-

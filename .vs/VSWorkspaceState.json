@@ -1,11 +1,8 @@
 {
   "ExpandedNodes": [
     "",
-    "\\assets",
-    "\\assets\\plugins\\bootstrap",
-    "\\assets\\plugins\\bootstrap\\css",
-    "\\assets\\plugins\\elegant_font"
+    "\\assets\\js"
   ],
-  "SelectedNode": "\\favicon.ico",
+  "SelectedNode": "\\assets",
   "PreviewInSolutionExplorer": false
 }
