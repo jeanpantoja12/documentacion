@@ -23,7 +23,7 @@
 
 </head>
 
-<body class="body-purple">
+<body class="body-orange">
     <div class="page-wrapper">
         <!-- ******Header****** -->
         <header id="header" class="header">
@@ -40,15 +40,14 @@
 
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <li class="breadcrumb-item active">Valoracion Lugar</li>
+                    <li class="breadcrumb-item active">Rutas de Transporte</li>
                 </ol>
- 
             </div><!--//container-->
         </header><!--//header-->
         <div class="doc-wrapper">
             <div class="container">
                 <div id="doc-header" class="doc-header text-center">
-                    <h1 class="doc-title"><i class="icon fa fa-check-square"></i> Valoracion Lugar</h1>
+                    <h1 class="doc-title"><i class="icon fa fa-route"></i> Rutas de Trasnporte</h1>
                     <div class="meta"><i class="far fa-clock"></i> Última Modificación: 25 de Noviembre, 2020</div>
                 </div><!--//doc-header-->
                 <div class="doc-body row">
@@ -67,58 +66,68 @@
                                         <p>Usar los links proporcionados en el documento/Utilizar los cuerpos de documento para el método POST</p>
                                     </div><!--//content-->
                                 </div>
-                                <div id="insert" class="section-block">
+                                <div id="login1" class="section-block">
                                     <div class="code-block">
-                                        <h3 class="logo">Insertar Comentario Por Lugar <span class="doc-title callout-success">POST</span></h3>
-                                        <h5 class="callout-title">http://smartcityhyo.tk/api/Identidad_Cultural/Insertar_Comentario_Por_Lugar.php</h5>
+                                        <h3 class="logo">Login <span class="doc-title callout-success">POST</span></h3>
+                                        <h5 class="callout-title">http://smartcityhyo.tk/api/Rutas_Transporte/api/auth/login</h5>
                                         <pre><code class="language-css">{
-    "ID_Lugar_Turistico": 1,
-    "ID_Usuario": 1,
-    "VL_Comentario": "Es interesante",
-    "VL_Votos_totales": 6
+    "usuario" :"",
+    "password": ""
+ }
+</code></pre>
+                                    </div><!--//code-block-->
+                                </div><!--//section-block-->
+                                <div id="sing_up1" class="section-block">
+                                    <div class="code-block">
+                                        <h3>Sing_Up <span class="doc-title callout-success">POST</span></h3>
+                                        <h5 class="callout-title">http://smartcityhyo.tk/api/Rutas_Transporte/api/auth/signup</h5>
+                                        <pre><code class="language-css">{
+    "nombres" : "",
+    "apellidos" : "",
+    "correo" : "@hotmail.com",
+    "password" : "",
+    "telefono" : "",
+    "tipo" : "",
+    "estado" : "Activo"
 }
 </code></pre>
                                     </div><!--//code-block-->
                                 </div><!--//section-block-->
-                                <div id="list1" class="section-block">
+                                <div id="sing_up2" class="section-block">
                                     <div class="code-block">
-                                        <h3>Listar Comentario Por Lugar <span class="doc-title callout-success">POST</span></h3>
-                                        <h5 class="callout-title">http://smartcityhyo.tk/api/Identidad_Cultural/Lista_Comentario_Por_Lugar.php</h5>
-                                        <pre><code class="language-css">No se ingresan parametros
-</code></pre>
-                                    </div><!--//code-block-->
-                                </div><!--//section-block-->
-                                <div id="list2" class="section-block">
-                                    <div class="code-block">
-                                        <h3>Listar Lugares Por ID <span class="doc-title callout-success">POST</span></h3>
-                                        <h5 class="callout-title">http://smartcityhyo.tk/api/Identidad_Cultural/Lista_Lugares_Id.php</h5>
+                                        <h3>Sing_Up_Driver <span class="doc-title callout-success">POST</span></h3>
+                                        <h5 class="callout-title">http://smartcityhyo.tk/api/Rutas_Transporte/api/auth/signupdriver</h5>
                                         <pre><code class="language-css">{
-    "id": 1
+    "nombres": "conductor3 nombre",
+    "apellidos": "conductor3 apellidos",
+    "telefono": "12345701",
+    "correo": "conductor03@gmail.com",
+    "password": "Conductor123$",
+    "empresaId": "2"
 }
 </code></pre>
                                     </div><!--//code-block-->
                                 </div><!--//section-block-->
-                                <div id="list3" class="section-block">
+                                <div id="login2" class="section-block">
                                     <div class="code-block">
-                                        <h3>Listar Lugares TOP <span class="doc-title callout-success">POST</span></h3>
-                                        <h5 class="callout-title">http://smartcityhyo.tk/api/Identidad_Cultural/Lista_Lugares_Top.php</h5>
-                                        <pre><code class="language-css">No se ingresan parametros
+                                        <h3 class="logo">Login_Driver <span class="doc-title callout-success">POST</span></h3>
+                                        <h5 class="callout-title">http://smartcityhyo.tk/api/Rutas_Transporte/api/auth/logindriver</h5>
+                                        <pre><code class="language-css">{
+    "usuario" :"",
+    "password": ""
+ }
 </code></pre>
                                     </div><!--//code-block-->
                                 </div><!--//section-block-->
-                                <div id="list4" class="section-block">
+                                <div id="profile" class="section-block">
                                     <div class="code-block">
-                                        <h3>Listar Lugares <span class="doc-title callout-success">POST</span></h3>
-                                        <h5 class="callout-title">http://smartcityhyo.tk/api/Identidad_Cultural/Lista_Lugares.php</h5>
-                                        <pre><code class="language-css">No se ingresan parametros
-</code></pre>
-                                    </div><!--//code-block-->
-                                </div><!--//section-block-->
-                                <div id="list5" class="section-block">
-                                    <div class="code-block">
-                                        <h3>Listar Sugerencias <span class="doc-title callout-success">POST</span></h3>
-                                        <h5 class="callout-title">http://smartcityhyo.tk/api/Identidad_Cultural/Lista_Sugerencias.php</h5>
-                                        <pre><code class="language-css">No se ingresan parametros
+                                        <h3 class="logo">User_profile <span class="doc-title callout-success">POST</span></h3>
+                                        <h5 class="callout-title">http://smartcityhyo.tk/api/Rutas_Transporte/api/users/profile</h5>
+                                        <pre><code class="language-css">{
+    //Por headers
+    key : token
+    value: valortoken
+}
 </code></pre>
                                     </div><!--//code-block-->
                                 </div><!--//section-block-->
@@ -136,7 +145,8 @@
                                                 </thead>
                                                 <tbody>
                                                     <tr>
-                                                        <td>Identidad Cultural</td>
+                                                        <td>Movilidad Urbana - Rutas de Transporte</td>
+
                                                     </tr>
                                                 </tbody>
                                             </table>
@@ -154,12 +164,11 @@
 
                                 <a class="nav-link scrollto" href="#code-section">Servicios</a>
                                 <nav class="doc-sub-menu nav flex-column">
-                                    <a class="nav-link scrollto" href="#insert">Insertar Comentario Por Lugar</a>
-                                    <a class="nav-link scrollto" href="#list1">Listar Comentario Por Lugar</a>
-                                    <a class="nav-link scrollto" href="#list2">Listar Lugares Por ID</a>
-                                    <a class="nav-link scrollto" href="#list3">Listar Lugares TOP</a>
-                                    <a class="nav-link scrollto" href="#list4">Listar Lugares</a>
-                                    <a class="nav-link scrollto" href="#list5">Listar Sugerencias</a>
+                                    <a class="nav-link scrollto" href="#login1">Login</a>
+                                    <a class="nav-link scrollto" href="#sing_up1">Sing_Up</a>
+                                    <a class="nav-link scrollto" href="#sing_up2">Sing_Up_Driver</a>
+                                    <a class="nav-link scrollto" href="#login2">Login_Driver</a>
+                                    <a class="nav-link scrollto" href="#profile">User_profile</a>
                                     <a class="nav-link scrollto" href="#modulos">Módulos que lo utilizan</a>
                                 </nav><!--//nav-->
 
