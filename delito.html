@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+﻿<<!DOCTYPE html>
 <html lang="en">
 <head>
     <title>Web Services</title>
@@ -23,7 +23,7 @@
 
 </head>
 
-<body class="body-purple">
+<body class="body-primary">
     <div class="page-wrapper">
         <!-- ******Header****** -->
         <header id="header" class="header">
@@ -40,7 +40,7 @@
 
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <li class="breadcrumb-item active">Valoracion Lugar</li>
+                    <li class="breadcrumb-item active">Delito</li>
                 </ol>
 
             </div><!--//container-->
@@ -48,7 +48,7 @@
         <div class="doc-wrapper">
             <div class="container">
                 <div id="doc-header" class="doc-header text-center">
-                    <h1 class="doc-title"><i class="icon fa fa-check-square"></i> Valoracion Lugar</h1>
+                    <h1 class="doc-title"><i class="icon fa fa-exclamation"></i> Delito</h1>
                     <div class="meta"><i class="far fa-clock"></i> Última Modificación: 25 de Noviembre, 2020</div>
                 </div><!--//doc-header-->
                 <div class="doc-body row">
@@ -67,57 +67,10 @@
                                         <p>Usar los links proporcionados en el documento/Utilizar los cuerpos de documento para el método POST</p>
                                     </div><!--//content-->
                                 </div>
-                                <div id="insert" class="section-block">
+                                <div id="list" class="section-block">
                                     <div class="code-block">
-                                        <h3 class="logo">Insertar Comentario Por Lugar <span class="doc-title callout-success">POST</span></h3>
-                                        <h5 class="callout-title">http://smartcityhyo.tk/api/Identidad_Cultural/Insertar_Comentario_Por_Lugar.php</h5>
-                                        <pre><code class="language-css">{
-    "ID_Lugar_Turistico": 1,
-    "ID_Usuario": 1,
-    "VL_Comentario": "Es interesante",
-    "VL_Votos_totales": 6
-}
-</code></pre>
-                                    </div><!--//code-block-->
-                                </div><!--//section-block-->
-                                <div id="list1" class="section-block">
-                                    <div class="code-block">
-                                        <h3>Listar Comentario Por Lugar <span class="doc-title callout-success">POST</span></h3>
-                                        <h5 class="callout-title">http://smartcityhyo.tk/api/Identidad_Cultural/Lista_Comentario_Por_Lugar.php</h5>
-                                        <pre><code class="language-css">No se ingresan parametros
-</code></pre>
-                                    </div><!--//code-block-->
-                                </div><!--//section-block-->
-                                <div id="list2" class="section-block">
-                                    <div class="code-block">
-                                        <h3>Listar Lugares Por ID <span class="doc-title callout-success">POST</span></h3>
-                                        <h5 class="callout-title">http://smartcityhyo.tk/api/Identidad_Cultural/Lista_Lugares_Id.php</h5>
-                                        <pre><code class="language-css">{
-    "id": 1
-}
-</code></pre>
-                                    </div><!--//code-block-->
-                                </div><!--//section-block-->
-                                <div id="list3" class="section-block">
-                                    <div class="code-block">
-                                        <h3>Listar Lugares TOP <span class="doc-title callout-success">POST</span></h3>
-                                        <h5 class="callout-title">http://smartcityhyo.tk/api/Identidad_Cultural/Lista_Lugares_Top.php</h5>
-                                        <pre><code class="language-css">No se ingresan parametros
-</code></pre>
-                                    </div><!--//code-block-->
-                                </div><!--//section-block-->
-                                <div id="list4" class="section-block">
-                                    <div class="code-block">
-                                        <h3>Listar Lugares <span class="doc-title callout-success">POST</span></h3>
-                                        <h5 class="callout-title">http://smartcityhyo.tk/api/Identidad_Cultural/Lista_Lugares.php</h5>
-                                        <pre><code class="language-css">No se ingresan parametros
-</code></pre>
-                                    </div><!--//code-block-->
-                                </div><!--//section-block-->
-                                <div id="list5" class="section-block">
-                                    <div class="code-block">
-                                        <h3>Listar Sugerencias <span class="doc-title callout-success">POST</span></h3>
-                                        <h5 class="callout-title">http://smartcityhyo.tk/api/Identidad_Cultural/Lista_Sugerencias.php</h5>
+                                        <h3>Listar Delitos <span class="doc-title callout-success">POST</span></h3>
+                                        <h5 class="callout-title">http://smartcityhyo.tk/api/Seguridad/Listar_delitos.php</h5>
                                         <pre><code class="language-css">No se ingresan parametros
 </code></pre>
                                     </div><!--//code-block-->
@@ -136,7 +89,7 @@
                                                 </thead>
                                                 <tbody>
                                                     <tr>
-                                                        <td>Identidad Cultural</td>
+                                                        <td>Deteccion de actos delictivos</td>
                                                     </tr>
                                                 </tbody>
                                             </table>
@@ -154,12 +107,7 @@
 
                                 <a class="nav-link scrollto" href="#code-section">Servicios</a>
                                 <nav class="doc-sub-menu nav flex-column">
-                                    <a class="nav-link scrollto" href="#insert">Insertar Comentario Por Lugar</a>
-                                    <a class="nav-link scrollto" href="#list1">Listar Comentario Por Lugar</a>
-                                    <a class="nav-link scrollto" href="#list2">Listar Lugares Por ID</a>
-                                    <a class="nav-link scrollto" href="#list3">Listar Lugares TOP</a>
-                                    <a class="nav-link scrollto" href="#list4">Listar Lugares</a>
-                                    <a class="nav-link scrollto" href="#list5">Listar Sugerencias</a>
+                                    <a class="nav-link scrollto" href="#list">Listar Delitos</a>                                   
                                     <a class="nav-link scrollto" href="#modulos">Módulos que lo utilizan</a>
                                 </nav><!--//nav-->
 
