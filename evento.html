@@ -23,7 +23,7 @@
 
 </head>
 
-<body class="body-pink">
+<body class="body-green">
     <div class="page-wrapper">
         <!-- ******Header****** -->
         <header id="header" class="header">
@@ -40,7 +40,7 @@
 
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <li class="breadcrumb-item active">Obra</li>
+                    <li class="breadcrumb-item active">Evento</li>
                 </ol>
 
                 <div class="top-search-box">
@@ -58,7 +58,7 @@
         <div class="doc-wrapper">
             <div class="container">
                 <div id="doc-header" class="doc-header text-center">
-                    <h1 class="doc-title"><i class="icon fa fa-building"></i>Obra</h1>
+                    <h1 class="doc-title"><i class="icon fa fa-calendar-alt"></i>Evento</h1>
                     <div class="meta"><i class="far fa-clock"></i> Última Modificación: 25 de Noviembre, 2020</div>
                 </div><!--//doc-header-->
                 <div class="doc-body row">
@@ -77,40 +77,51 @@
                                         <p>Usar los links proporcionados en el documento/Utilizar los cuerpos de documento para el método POST</p>
                                     </div><!--//content-->
                                 </div>
-                                <div id="consulID" class="section-block">
+                                <div id="list" class="section-block">
                                     <div class="code-block">
-                                        <h3 class="logo">Consultar Obra por ID <span class="doc-title callout-success">GET</span></h3>
+                                        <h3 class="logo">Listar eventos <span class="doc-title callout-success">GET</span></h3>
                                         <h5 class="callout-title">
-                                            http://smartcityhyo.tk/api/Obra/Consult_obra_id.php
+                                            http://smartcityhyo.tk/api/Evento/List_Evento.php
 
-                                        </h5> <pre><code class="language-css">Ingresar por parametro: ID_Obra=?
+                                        </h5>
+                                         <pre><code class="language-css">No se ingresan parámetros
 </code></pre>
-
                                     </div><!--//code-block-->
                                 </div><!--//section-block-->
-                                <div id="consultNombre" class="section-block">
+                                <div id="consultID" class="section-block">
                                     <div class="code-block">
-                                        <h3 class="logo">Consultar obra por nombre<span class="doc-title callout-success">GET</span></h3>
+                                        <h3 class="logo">Consultar eventos por ID<span class="doc-title callout-success">GET</span></h3>
                                         <h5 class="callout-title">
-                                           http://smartcityhyo.tk/api/Obra/Consult_obra_nombre.php
+                                          http://smartcityhyo.tk/api/Evento/Consult_evento_id.php
                                         </h5>
-                                         </h5> <pre><code class="language-css">Ingresar por parametro: OBR_Nombre=?
+                                         </h5> <pre><code class="language-css">Ingresar por parametro: ID_Evento=?
+</code></pre>
+                                    </div><!--//code-block-->
+                                </div><!--//section-block-->
+                                <div id="consultDis" class="section-block">
+                                    <div class="code-block">
+                                        <h3 class="logo">Consultar eventos por distrito<span class="doc-title callout-success">GET</span></h3>
+                                        <h5 class="callout-title">
+                                         http://smartcityhyo.tk/api/Evento/Consult_evento_distrito.php
+                                        </h5>
+                                         </h5> <pre><code class="language-css">Ingresar por parametro: ID_Distrito=?
+</code></pre>
+                                    </div><!--//code-block-->
+                                </div><!--//section-block-->
+
+                                 <div id="listEventosProx" class="section-block">
+                                    <div class="code-block">
+                                        <h3 class="logo">Listar Eventos Próximos<span class="doc-title callout-success">GET</span></h3>
+                                        <h5 class="callout-title">
+                                         http://smartcityhyo.tk/api/Identidad_Cultural/list_events_prox.php
+                                        </h5>
+                                         <pre><code class="language-css">No se ingresan parámetros
 </code></pre>
                                     </div><!--//code-block-->
                                 </div><!--//section-block-->
                                 
-                                <div id="list" class="section-block">
-                                    <div class="code-block">
-                                        <h3>Listar Obras <span class="doc-title callout-info">GET</span></h3>
-                                        <h5 class="callout-title">
-                                            http://smartcityhyo.tk/api/Obra/Listar_Obra.php
-                                        </h5>
-                                        <pre><code class="language-css">No se ingresan parametros
-</code></pre>
-                                    </div><!--//code-block-->
-                                </div><!--//section-block-->
                                
-
+                              
                                 <section id="tables-section" class="doc-section">
                                     <h2 class="section-title">Módulos que lo utilizan</h2>
                                     <div id="modulos" class="section-block">
@@ -125,7 +136,7 @@
                                                 </thead>
                                                 <tbody>
                                                     <tr>
-                                                        <td>Participación Cuidadana</td>
+                                                        <td>Identidad Cultural</td>
 
                                                     </tr>
                                                    
@@ -145,9 +156,12 @@
 
                                 <a class="nav-link scrollto" href="#code-section">Servicios</a>
                                 <nav class="doc-sub-menu nav flex-column">
-                                    <a class="nav-link scrollto" href="#consulID">Consultar Obra por ID</a>
-                                    <a class="nav-link scrollto" href="#consultNombre">Consultar obra por nombre</a>
-                                    <a class="nav-link scrollto" href="#list">Listar Obras</a>
+                                    <a class="nav-link scrollto" href="#list">Listar eventos</a>
+                                    <a class="nav-link scrollto" href="#consultID">Consultar eventos por ID</a>
+                                    <a class="nav-link scrollto" href="#consultDis">Consultar eventos por distrito</a>
+                                    <a class="nav-link scrollto" href="#listEventosProx">Listar Eventos Próximos</a>
+                                
+                                  
                                     <a class="nav-link scrollto" href="#modulos">Módulos que lo utilizan</a>
                                 </nav><!--//nav-->
 

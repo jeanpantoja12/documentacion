@@ -23,7 +23,7 @@
 
 </head>
 
-<body class="body-pink">
+<body class="body-green">
     <div class="page-wrapper">
         <!-- ******Header****** -->
         <header id="header" class="header">
@@ -40,7 +40,7 @@
 
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <li class="breadcrumb-item active">Obra</li>
+                    <li class="breadcrumb-item active">Provincia</li>
                 </ol>
 
                 <div class="top-search-box">
@@ -58,7 +58,7 @@
         <div class="doc-wrapper">
             <div class="container">
                 <div id="doc-header" class="doc-header text-center">
-                    <h1 class="doc-title"><i class="icon fa fa-building"></i>Obra</h1>
+                    <h1 class="doc-title"><i class="icon fa fa-globe-americas"></i>Provincia</h1>
                     <div class="meta"><i class="far fa-clock"></i> Última Modificación: 25 de Noviembre, 2020</div>
                 </div><!--//doc-header-->
                 <div class="doc-body row">
@@ -77,39 +77,49 @@
                                         <p>Usar los links proporcionados en el documento/Utilizar los cuerpos de documento para el método POST</p>
                                     </div><!--//content-->
                                 </div>
-                                <div id="consulID" class="section-block">
+                                <div id="insert" class="section-block">
                                     <div class="code-block">
-                                        <h3 class="logo">Consultar Obra por ID <span class="doc-title callout-success">GET</span></h3>
+                                        <h3 class="logo">Agregar Provincia <span class="doc-title callout-success">POST</span></h3>
                                         <h5 class="callout-title">
-                                            http://smartcityhyo.tk/api/Obra/Consult_obra_id.php
+                                            http://smartcityhyo.tk/api/Provincia/Insertar_provincia.php
 
-                                        </h5> <pre><code class="language-css">Ingresar por parametro: ID_Obra=?
-</code></pre>
-
-                                    </div><!--//code-block-->
-                                </div><!--//section-block-->
-                                <div id="consultNombre" class="section-block">
-                                    <div class="code-block">
-                                        <h3 class="logo">Consultar obra por nombre<span class="doc-title callout-success">GET</span></h3>
-                                        <h5 class="callout-title">
-                                           http://smartcityhyo.tk/api/Obra/Consult_obra_nombre.php
                                         </h5>
-                                         </h5> <pre><code class="language-css">Ingresar por parametro: OBR_Nombre=?
+                                        <pre><code class="language-css">{
+    "PROV_Nombre": "Junin"
+    
+}
 </code></pre>
                                     </div><!--//code-block-->
                                 </div><!--//section-block-->
                                 
                                 <div id="list" class="section-block">
                                     <div class="code-block">
-                                        <h3>Listar Obras <span class="doc-title callout-info">GET</span></h3>
+                                        <h3 class="logo">Listar Provincia<span class="doc-title callout-success">GET</span></h3>
                                         <h5 class="callout-title">
-                                            http://smartcityhyo.tk/api/Obra/Listar_Obra.php
+                                          http://smartcityhyo.tk/api/Provincia/List_provincia.php 
                                         </h5>
-                                        <pre><code class="language-css">No se ingresan parametros
+                                         <pre><code class="language-css">No se ingresan parametros
 </code></pre>
                                     </div><!--//code-block-->
                                 </div><!--//section-block-->
-                               
+          
+                               <div id="update" class="section-block">
+                                    <div class="code-block">
+                                        <h3 class="logo">Update Provincia <span class="doc-title callout-success">POST</span></h3>
+                                        <h5 class="callout-title">
+                                            http://smartcityhyo.tk/api/Provincia/Update_provincia.php
+                                        </h5>
+                                        <pre><code class="language-css">{
+    "ID_Provincia": 3,
+    "PROV_Nombre": "Daniel Alcides Carrion"
+    
+}
+</code></pre>
+                                    </div><!--//code-block-->
+                                </div><!--//section-block-->
+
+                                
+                                  
 
                                 <section id="tables-section" class="doc-section">
                                     <h2 class="section-title">Módulos que lo utilizan</h2>
@@ -125,7 +135,7 @@
                                                 </thead>
                                                 <tbody>
                                                     <tr>
-                                                        <td>Participación Cuidadana</td>
+                                                        <td>Dashboard</td>
 
                                                     </tr>
                                                    
@@ -145,9 +155,11 @@
 
                                 <a class="nav-link scrollto" href="#code-section">Servicios</a>
                                 <nav class="doc-sub-menu nav flex-column">
-                                    <a class="nav-link scrollto" href="#consulID">Consultar Obra por ID</a>
-                                    <a class="nav-link scrollto" href="#consultNombre">Consultar obra por nombre</a>
-                                    <a class="nav-link scrollto" href="#list">Listar Obras</a>
+                                    <a class="nav-link scrollto" href="#insert">Agregar Provincia</a>
+                                    <a class="nav-link scrollto" href="#list">Listar Provincia</a>
+                                    <a class="nav-link scrollto" href="#update">Update Provincia</a>
+                                
+                                  
                                     <a class="nav-link scrollto" href="#modulos">Módulos que lo utilizan</a>
                                 </nav><!--//nav-->
 
