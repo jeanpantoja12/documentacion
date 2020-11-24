@@ -23,7 +23,7 @@
 
 </head>
 
-<body class="body-purple">
+<body class="body-blue">
     <div class="page-wrapper">
         <!-- ******Header****** -->
         <header id="header" class="header">
@@ -40,18 +40,18 @@
 
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <li class="breadcrumb-item active">Conductor</li>
+                    <li class="breadcrumb-item active">Recursos Cercanos</li>
                 </ol>
 
-                
+            
 
             </div><!--//container-->
         </header><!--//header-->
         <div class="doc-wrapper">
             <div class="container">
                 <div id="doc-header" class="doc-header text-center">
-                    <h1 class="doc-title"><i class="icon fa fa-user-tie"></i>Conductor</h1>
-                    <div class="meta"><i class="far fa-clock"></i> Última Modificación: 25 de Noviembre, 2020</div>
+                    <h1 class="doc-title"><i class="icon fa fa-store-alt"></i>Recursos Cercanos</h1>
+                    <div class="meta"><i class="far fa-store-alt"></i> Última Modificación: 25 de Noviembre, 2020</div>
                 </div><!--//doc-header-->
                 <div class="doc-body row">
                     <div class="doc-content col-md-9 col-12 order-1">
@@ -71,110 +71,29 @@
                                 </div>
                                 <div id="insert" class="section-block">
                                     <div class="code-block">
-                                        <h3 class="logo">Agregar Conductor<span class="doc-title callout-success">POST</span></h3>
+                                        <h3 class="logo">"Insertar recursos cercanos
+"<span class="doc-title callout-success">GET</span></h3>
                                         <h5 class="callout-title">
-                                            http://smartcityhyo.tk/api/Conductor/Insertar_Conductor.php
+                                            http://smartcityhyo.tk/api/RecursosCercanos/Insertar_Recursos_Cercanos.php
 
                                         </h5>
-                                        <pre><code class="language-css">{
-    "CON_Nombre": "Diomenes",
-    "CON_Apellidos": "Buendia",
-    "CON_Telefono": "992665661",
-    "CON_Direccion": "Av. Los insurgentes 209",
-    "CON_Licencia": "1235asd",
-    "ID_Empresa_Transp": 1,
-    "CON_Latitud": "1.200",
-    "CON_Longitud": "-36.00",
-    "CON_Status":, "0"
-    "CON_FCM": "0",
-    "CON_Email": "buendia@hotmail.com",
-    "CON_Contrasena": "123456"
-
-    
-}
-</code></pre>
-                                    </div><!--//code-block-->
-                                </div><!--//section-block-->
-
-                                <div id="login" class="section-block">
-                                    <div class="code-block">
-                                        <h3 class="logo">login<span class="doc-title callout-success">POST</span></h3>
-                                        <h5 class="callout-title">
-                                            http://smartcityhyo.tk/api/Conductor/login.php
-
-                                        </h5>
-                                        <pre><code class="language-css">{
-    "email": "buendia@hotmail.com",
-    "password": "123456"
-
-    
-}
-</code></pre>
-                                    </div><!--//code-block-->
-                                </div><!--//section-block-->
-                                <div id="delete" class="section-block">
-                                    <div class="code-block">
-                                        <h3 class="logo">Eliminar Conductor<span class="doc-title callout-success">POST</span></h3>
-                                        <h5 class="callout-title">
-                                         http://smartcityhyo.tk/api/Conductor/Eliminar_Conductor.php
-                                        </h5>
-                                         </h5> <pre><code class="language-css">Ingresar por parámetro: ID_Conductor=?
-</code></pre>
-                                    </div><!--//code-block-->
-                                </div><!--//section-block-->
-
-                                <div id="update" class="section-block">
-                                    <div class="code-block">
-                                        <h3 class="logo">Update Conductor<span class="doc-title callout-success">POST</span></h3>
-                                        <h5 class="callout-title">
-                                          http://smartcityhyo.tk/api/Conductor/Update_Conductor.php
-                                        </h5>
-                                          <pre><code class="language-css">{
-    "CON_Nombre": "Carlos",
-    "CON_Apellidos": "Buendia",
-    "CON_Telefono": "999652221",
-    "CON_Direccion": "Jr Los insurgentes 200",
-    "CON_Licencia": "1235asd",
-    "ID_Empresa_Transp": 1,
-    "CON_Latitud": "10.200",
-    "CON_Longitud": "-38.00",
-    "CON_Status":, "0"
-    "CON_FCM": "0",
-    "CON_Email": "buendia@hotmail.com",
-    "CON_Contrasena": "123456"
-
+                                         <pre><code class="language-css">{
+    "RES_Nombre": "Restaurant",
+    "RES_Descripcion": "Buen restaurant",
+    "RES_Tipo": "Comida",
+    "RES_Hora_Atencion": "12:00:00",
+    "RES_URL_Map": "www.google.com",
+    "RES_Pagina_Web: "www.google.com",
+    "RES_Telefono": "955522221",
+    "RES_Facebook": "https://www.facebook.com/CeciliJaenneth/"
     
 }
 </code></pre>
                                     </div><!--//code-block-->
                                 </div><!--//section-block-->
                                 
-
-                                 <div id="lisCond" class="section-block">
-                                    <div class="code-block">
-                                        <h3 class="logo">Listar Conductor <span class="doc-title callout-success">GET</span></h3>
-                                        <h5 class="callout-title">
-                                         http://smartcityhyo.tk/api/Conductor/List_Conductor.php
-                                        </h5>
-                                         </h5> 
-                                         <pre><code class="language-css">No se ingresan parámetros
-</code></pre>
-                                    </div><!--//code-block-->
-                                </div><!--//section-block-->
-                                <div id="listID" class="section-block">
-                                    <div class="code-block">
-                                        <h3>Consultar Conductor por ID <span class="doc-title callout-info"> GET </span></h3>
-                                        <h5 class="callout-title">
-                                            http://smartcityhyo.tk/api/Conductor/Consultar_Conductor_ID.php
-                                        </h5>
-                                        </h5> <pre><code class="language-css">Ingresar por parámetro: ID_Conductor=?
-</code></pre>
-                                    </div><!--//code-block-->
-                                </div><!--//section-block-->
-
-
-                                 
-
+                               
+                              
                                 <section id="tables-section" class="doc-section">
                                     <h2 class="section-title">Módulos que lo utilizan</h2>
                                     <div id="modulos" class="section-block">
@@ -189,7 +108,7 @@
                                                 </thead>
                                                 <tbody>
                                                     <tr>
-                                                        <td>Movilidad Urbana - Rutas de Transporte</td>
+                                                        <td>Identidad Cultural</td>
 
                                                     </tr>
                                                    
@@ -209,13 +128,10 @@
 
                                 <a class="nav-link scrollto" href="#code-section">Servicios</a>
                                 <nav class="doc-sub-menu nav flex-column">
-                                    <a class="nav-link scrollto" href="#insert">Agregar Conductor</a>
-                                    <a class="nav-link scrollto" href="#login">Login</a>
-                                    <a class="nav-link scrollto" href="#delete">Eliminar Conductor</a>
-                                    <a class="nav-link scrollto" href="#update">Update Conductor</a>
-                                    <a class="nav-link scrollto" href="#lisCond">Listar Conductor</a>
-                                    <a class="nav-link scrollto" href="#listID">Consultar Conductor por ID</a>
-                                                                     
+                                    <a class="nav-link scrollto" href="#insert">Listar eventos</a>
+                  
+                                
+                                  
                                     <a class="nav-link scrollto" href="#modulos">Módulos que lo utilizan</a>
                                 </nav><!--//nav-->
 

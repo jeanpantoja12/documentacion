@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <title>Web Services</title>
@@ -23,7 +23,7 @@
 
 </head>
 
-<body class="body-purple">
+<body class="body-blue">
     <div class="page-wrapper">
         <!-- ******Header****** -->
         <header id="header" class="header">
@@ -40,7 +40,7 @@
 
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <li class="breadcrumb-item active">Conductor</li>
+                    <li class="breadcrumb-item active">Fotografia Lugar Turístico</li>
                 </ol>
 
                 
@@ -50,7 +50,7 @@
         <div class="doc-wrapper">
             <div class="container">
                 <div id="doc-header" class="doc-header text-center">
-                    <h1 class="doc-title"><i class="icon fa fa-user-tie"></i>Conductor</h1>
+                    <h1 class="doc-title"><i class="icon fa fa-images"></i>Fotografia Lugar Turistico</h1>
                     <div class="meta"><i class="far fa-clock"></i> Última Modificación: 25 de Noviembre, 2020</div>
                 </div><!--//doc-header-->
                 <div class="doc-body row">
@@ -69,111 +69,107 @@
                                         <p>Usar los links proporcionados en el documento/Utilizar los cuerpos de documento para el método POST</p>
                                     </div><!--//content-->
                                 </div>
+                                <div class="callout-block callout-success">
+                                    <div class="icon-holder">
+                                        <i class="fas fa-thumbs-up"></i>
+                                    </div><!--//icon-holder-->
+                                    <div class="content">
+                                        <h4 class="callout-title">Tip 2:</h4>
+                                        <p>
+                                            Para los servicios con fotografía, el formato de envio en postman es desde la sección <span style="color:black;"><b>body>>form-data</b></span>.
+                                            Después de ingresar, se debe especificar el campo de la fotografia con un tipo de dato <span style="color:black;">
+                                                <b>FILE</b>
+                                            </span>
+                                        </p>
+                                    </div><!--//content-->
+                                </div>
                                 <div id="insert" class="section-block">
+
                                     <div class="code-block">
-                                        <h3 class="logo">Agregar Conductor<span class="doc-title callout-success">POST</span></h3>
+                                        <h3 class="logo">Agregar Fotografia <span class="doc-title callout-success">POST</span></h3>
                                         <h5 class="callout-title">
-                                            http://smartcityhyo.tk/api/Conductor/Insertar_Conductor.php
+                                            http://smartcityhyo.tk/api/Fotografia_Lugar/Insert_Fotografia.php
+
+                                        </h5>
+                                        <div class="table-responsive">
+                                            <table class="table">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Key</th>
+                                                        <th>Value</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>ID_Lugar_Turistico</td>
+                                                        <td>1</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td scope="row">FG_Descripcion</td>
+                                                        <td>asdasdas</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td scope="row">fotografia_image</td>
+                                                        <td><b>FILE</b></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div><!--//table-responsive-->
+                                    </div><!--//code-block-->
+                                </div><!--//section-block-->
+                                <div id="list" class="section-block">
+                                    <div class="code-block">
+                                        <h3>Listar Fotografia <span class="doc-title callout-info">GET</span></h3>
+                                        <h5 class="callout-title">
+                                            http://smartcityhyo.tk/api/Fotografia_Lugar/Listar_Fotografia.php
+
+
+                                        </h5>
+                                        <pre><code class="language-css">No se ingresan parametros
+</code></pre>
+                                    </div><!--//code-block-->
+                                </div><!--//section-block-->
+                                <div id="update" class="section-block">
+                                    <div class="code-block">
+                                        <h3 class="logo">Update Fotografia <span class="doc-title callout-success">POST</span></h3>
+                                        <h5 class="callout-title">
+                                            http://smartcityhyo.tk/api/Fotografia_Lugar/Update_Fotografia.php
 
                                         </h5>
                                         <pre><code class="language-css">{
-    "CON_Nombre": "Diomenes",
-    "CON_Apellidos": "Buendia",
-    "CON_Telefono": "992665661",
-    "CON_Direccion": "Av. Los insurgentes 209",
-    "CON_Licencia": "1235asd",
-    "ID_Empresa_Transp": 1,
-    "CON_Latitud": "1.200",
-    "CON_Longitud": "-36.00",
-    "CON_Status":, "0"
-    "CON_FCM": "0",
-    "CON_Email": "buendia@hotmail.com",
-    "CON_Contrasena": "123456"
-
-    
+    "ID_Fotografia": 1,
+    "FG_Descripcion": "dsada",
+    "ID_Lugar_Turistico": 9
 }
 </code></pre>
                                     </div><!--//code-block-->
                                 </div><!--//section-block-->
-
-                                <div id="login" class="section-block">
+                                <div id="consult" class="section-block">
                                     <div class="code-block">
-                                        <h3 class="logo">login<span class="doc-title callout-success">POST</span></h3>
+                                        <h3>Consultar Fotografia por ID <span class="doc-title callout-info">GET</span></h3>
                                         <h5 class="callout-title">
-                                            http://smartcityhyo.tk/api/Conductor/login.php
+                                            http://smartcityhyo.tk/api/Fotografia_Lugar/Consultar_Fotografia_ID.php
 
                                         </h5>
-                                        <pre><code class="language-css">{
-    "email": "buendia@hotmail.com",
-    "password": "123456"
-
-    
-}
+                                        <pre><code class="language-css">Ingresar por parametro: ID_Fotografia=?
 </code></pre>
                                     </div><!--//code-block-->
                                 </div><!--//section-block-->
                                 <div id="delete" class="section-block">
                                     <div class="code-block">
-                                        <h3 class="logo">Eliminar Conductor<span class="doc-title callout-success">POST</span></h3>
+                                        <h3>Eliminar Fotografia <span class="doc-title callout-success">POST</span></h3>
                                         <h5 class="callout-title">
-                                         http://smartcityhyo.tk/api/Conductor/Eliminar_Conductor.php
-                                        </h5>
-                                         </h5> <pre><code class="language-css">Ingresar por parámetro: ID_Conductor=?
-</code></pre>
-                                    </div><!--//code-block-->
-                                </div><!--//section-block-->
+                                            http://smartcityhyo.tk/api/Fotografia_Lugar/Eliminar_Fotografia.php
 
-                                <div id="update" class="section-block">
-                                    <div class="code-block">
-                                        <h3 class="logo">Update Conductor<span class="doc-title callout-success">POST</span></h3>
-                                        <h5 class="callout-title">
-                                          http://smartcityhyo.tk/api/Conductor/Update_Conductor.php
-                                        </h5>
-                                          <pre><code class="language-css">{
-    "CON_Nombre": "Carlos",
-    "CON_Apellidos": "Buendia",
-    "CON_Telefono": "999652221",
-    "CON_Direccion": "Jr Los insurgentes 200",
-    "CON_Licencia": "1235asd",
-    "ID_Empresa_Transp": 1,
-    "CON_Latitud": "10.200",
-    "CON_Longitud": "-38.00",
-    "CON_Status":, "0"
-    "CON_FCM": "0",
-    "CON_Email": "buendia@hotmail.com",
-    "CON_Contrasena": "123456"
 
-    
+                                        </h5>
+                                        <pre><code class="language-css">{
+    "ID_Fotografia": "1"
 }
 </code></pre>
                                     </div><!--//code-block-->
                                 </div><!--//section-block-->
-                                
 
-                                 <div id="lisCond" class="section-block">
-                                    <div class="code-block">
-                                        <h3 class="logo">Listar Conductor <span class="doc-title callout-success">GET</span></h3>
-                                        <h5 class="callout-title">
-                                         http://smartcityhyo.tk/api/Conductor/List_Conductor.php
-                                        </h5>
-                                         </h5> 
-                                         <pre><code class="language-css">No se ingresan parámetros
-</code></pre>
-                                    </div><!--//code-block-->
-                                </div><!--//section-block-->
-                                <div id="listID" class="section-block">
-                                    <div class="code-block">
-                                        <h3>Consultar Conductor por ID <span class="doc-title callout-info"> GET </span></h3>
-                                        <h5 class="callout-title">
-                                            http://smartcityhyo.tk/api/Conductor/Consultar_Conductor_ID.php
-                                        </h5>
-                                        </h5> <pre><code class="language-css">Ingresar por parámetro: ID_Conductor=?
-</code></pre>
-                                    </div><!--//code-block-->
-                                </div><!--//section-block-->
-
-
-                                 
 
                                 <section id="tables-section" class="doc-section">
                                     <h2 class="section-title">Módulos que lo utilizan</h2>
@@ -189,10 +185,17 @@
                                                 </thead>
                                                 <tbody>
                                                     <tr>
-                                                        <td>Movilidad Urbana - Rutas de Transporte</td>
+                                                        <td>Identidad Cultural</td>
 
                                                     </tr>
-                                                   
+                                                    <tr>
+                                                        <td scope="row">Contacto entre el Turista y la Ciudad</td>
+
+                                                    </tr>
+                                                    <tr>
+                                                        <td scope="row">Dashboard</td>
+
+                                                    </tr>
                                                 </tbody>
                                             </table>
                                         </div><!--//table-responsive-->
@@ -209,13 +212,11 @@
 
                                 <a class="nav-link scrollto" href="#code-section">Servicios</a>
                                 <nav class="doc-sub-menu nav flex-column">
-                                    <a class="nav-link scrollto" href="#insert">Agregar Conductor</a>
-                                    <a class="nav-link scrollto" href="#login">Login</a>
-                                    <a class="nav-link scrollto" href="#delete">Eliminar Conductor</a>
-                                    <a class="nav-link scrollto" href="#update">Update Conductor</a>
-                                    <a class="nav-link scrollto" href="#lisCond">Listar Conductor</a>
-                                    <a class="nav-link scrollto" href="#listID">Consultar Conductor por ID</a>
-                                                                     
+                                    <a class="nav-link scrollto" href="#insert">Agregar Fotografia</a>
+                                    <a class="nav-link scrollto" href="#list">Listar Fotografia</a>
+                                    <a class="nav-link scrollto" href="#update">Update Fotografia</a>
+                                    <a class="nav-link scrollto" href="#consult">Consultar Fotografia por ID</a>
+                                    <a class="nav-link scrollto" href="#delete">Eliminar Fotografia</a>
                                     <a class="nav-link scrollto" href="#modulos">Módulos que lo utilizan</a>
                                 </nav><!--//nav-->
 
@@ -247,3 +248,4 @@
 
 </body>
 </html>
+
