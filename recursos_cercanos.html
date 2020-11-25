@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <title>Web Services</title>
@@ -51,7 +51,7 @@
             <div class="container">
                 <div id="doc-header" class="doc-header text-center">
                     <h1 class="doc-title"><i class="icon fa fa-store-alt"></i>Recursos Cercanos</h1>
-                    <div class="meta"><i class="far fa-store-alt"></i> Última Modificación: 25 de Noviembre, 2020</div>
+                    <div class="meta"><i class="far fa-store-alt"></i> Última Modificación: 24 de Noviembre, 2020</div>
                 </div><!--//doc-header-->
                 <div class="doc-body row">
                     <div class="doc-content col-md-9 col-12 order-1">
@@ -91,6 +91,43 @@
 </code></pre>
                                     </div><!--//code-block-->
                                 </div><!--//section-block-->
+                                <div id="update" class="section-block">
+                                    <div class="code-block">
+                                        <h3 class="logo">Editar Recursos Cercanos <span class="doc-title callout-success">POST</span></h3>
+                                        <h5 class="callout-title">http://smartcityhyo.tk/api/RecursosCercanos/editar_recursos.php</h5>
+                                        <pre><code class="language-css">{
+    "ID_Recursos": 1,
+    "RES_Nombre": "RRR",
+    "RES_Descripcion": "DDD",
+    "RES_Tipo": "CCC",
+    "RES_Hora_Atencion": "12:00:00",
+    "RES_URL_Map": "www.google2.com",
+    "RES_Pagina_Web: "www.google2.com",
+    "RES_Telefono": "99999999",
+    "RES_Facebook": "https://www.facebook.com/RECURSOSCERCANOS/"
+}
+</code></pre>
+                                    </div><!--//code-block-->
+                                </div><!--//section-block-->
+
+                                <div id="delete" class="section-block">
+                                    <div class="code-block">
+                                        <h3 class="logo">Eliminar Recursos Cercanos<span class="doc-title callout-success">POST</span></h3>
+                                        <h5 class="callout-title">
+                                            http://smartcityhyo.tk/api/RecursosCercanos/Eliminar_Recursos_Cercanos.php
+                                        </h5>
+                                        </h5> <pre><code class="language-css">Ingresar por parametro: ID_Recursos=?
+</code></pre>
+                                    </div><!--//code-block-->
+                                </div><!--//section-block-->
+                                <div id="list" class="section-block">
+                                    <div class="code-block">
+                                        <h3>Listar Recursos Cercanos <span class="doc-title callout-info">GET</span></h3>
+                                        <h5 class="callout-title">http://smartcityhyo.tk/api/RecursosCercanos/Listar_Recursos_Cercanos.php</h5>
+                                        <pre><code class="language-css">No se ingresan parametros
+</code></pre>
+                                    </div><!--//code-block-->
+                                </div><!--//section-block-->
                                 
                                
                               
@@ -108,7 +145,7 @@
                                                 </thead>
                                                 <tbody>
                                                     <tr>
-                                                        <td>Identidad Cultural</td>
+                                                        <td>Dashboard</td>
 
                                                     </tr>
                                                    
@@ -128,10 +165,10 @@
 
                                 <a class="nav-link scrollto" href="#code-section">Servicios</a>
                                 <nav class="doc-sub-menu nav flex-column">
-                                    <a class="nav-link scrollto" href="#insert">Listar eventos</a>
-                  
-                                
-                                  
+                                    <a class="nav-link scrollto" href="#insert">Insertar recursos cercanos</a>
+                                    <a class="nav-link scrollto" href="#update">Editar Recursos Cercanos</a>
+                                    <a class="nav-link scrollto" href="#delete">Eliminar Recursos Cercanos</a>
+                                    <a class="nav-link scrollto" href="#list">Listar Recursos Cercanos</a>                                    
                                     <a class="nav-link scrollto" href="#modulos">Módulos que lo utilizan</a>
                                 </nav><!--//nav-->
 

@@ -40,17 +40,18 @@
 
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <li class="breadcrumb-item active">Evento</li>
+                    <li class="breadcrumb-item active">Reporte Delito</li>
                 </ol>
 
-                
+
+
             </div><!--//container-->
         </header><!--//header-->
         <div class="doc-wrapper">
             <div class="container">
                 <div id="doc-header" class="doc-header text-center">
-                    <h1 class="doc-title"><i class="icon fa fa-calendar-alt"></i>Evento</h1>
-                    <div class="meta"><i class="far fa-clock"></i> Última Modificación: 25 de Noviembre, 2020</div>
+                    <h1 class="doc-title"><i class="icon fa fa-skull-crossbones"></i>Reporte Delito</h1>
+                    <div class="meta"><i class="far fa-clock"></i> Última Modificación: 24 de Noviembre, 2020</div>
                 </div><!--//doc-header-->
                 <div class="doc-body row">
                     <div class="doc-content col-md-9 col-12 order-1">
@@ -64,95 +65,32 @@
                                         <i class="fas fa-thumbs-up"></i>
                                     </div><!--//icon-holder-->
                                     <div class="content">
-                                        <h4 class="callout-title">Tip 1:</h4>
+                                        <h4 class="callout-title">Tip:</h4>
                                         <p>Usar los links proporcionados en el documento/Utilizar los cuerpos de documento para el método POST</p>
                                     </div><!--//content-->
                                 </div>
-
-                                        <div class="callout-block callout-success">
-                                    <div class="icon-holder">
-                                        <i class="fas fa-thumbs-up"></i>
-                                    </div><!--//icon-holder-->
-                                    <div class="content">
-                                        <h4 class="callout-title">Tip 2:</h4>
-                                        <p>
-                                            Para los servicios con fotografía, el formato de envio en postman es desde la sección <span style="color:black;"><b>body>>form-data</b></span>.
-                                            Después de ingresar, se debe especificar el campo de la fotografia con un tipo de dato <span style="color:black;">
-                                                <b>FILE</b>
-                                            </span>
-                                        </p>
-                                    </div><!--//content-->
-                                </div>
-
-                                <div id="list" class="section-block">
-                                    <div class="code-block">
-                                        <h3 class="logo">Listar eventos <span class="doc-title callout-success">GET</span></h3>
-                                        <h5 class="callout-title">
-                                            http://smartcityhyo.tk/api/Evento/List_Evento.php
-
-                                        </h5>
-                                        <pre><code class="language-css">No se ingresan parametros
-</code></pre>
-                                    </div><!--//code-block-->
-                                </div><!--//section-block-->
-                                <div id="consultID" class="section-block">
-                                    <div class="code-block">
-                                        <h3 class="logo">Consultar eventos por ID<span class="doc-title callout-success">GET</span></h3>
-                                        <h5 class="callout-title">
-                                            http://smartcityhyo.tk/api/Evento/Consult_evento_id.php
-                                        </h5>
-                                        </h5> <pre><code class="language-css">Ingresar por parametro: ID_Evento=?
-</code></pre>
-                                    </div><!--//code-block-->
-                                </div><!--//section-block-->
-                                <div id="consultDis" class="section-block">
-                                    <div class="code-block">
-                                        <h3 class="logo">Consultar eventos por distrito<span class="doc-title callout-success">GET</span></h3>
-                                        <h5 class="callout-title">
-                                            http://smartcityhyo.tk/api/Evento/Consult_evento_distrito.php
-                                        </h5>
-                                        </h5> <pre><code class="language-css">Ingresar por parametro: ID_Distrito=?
-</code></pre>
-                                    </div><!--//code-block-->
-                                </div><!--//section-block-->
-                                <div id="listEventosProx" class="section-block">
-                                    <div class="code-block">
-                                        <h3 class="logo">Listar Eventos Próximos<span class="doc-title callout-success">GET</span></h3>
-                                        <h5 class="callout-title">
-                                            http://smartcityhyo.tk/api/Identidad_Cultural/list_events_prox.php
-                                        </h5>
-                                        <pre><code class="language-css">No se ingresan parametros
-</code></pre>
-                                    </div><!--//code-block-->
-                                </div><!--//section-block-->
                                 <div id="insert" class="section-block">
                                     <div class="code-block">
-                                        <h3 class="logo">Insertar Evento <span class="doc-title callout-success">POST</span></h3>
-                                        <h5 class="callout-title">
-                                            http://smartcityhyo.tk/api/Evento/Insert_evento.php
-                                        </h5>
+                                        <h3 class="logo">Insertar Reporte Delito <span class="doc-title callout-success">POST</span></h3>
+                                        <h5 class="callout-title">http://smartcityhyo.tk/api/ReporteDelito/insertar_delito.php</h5>
                                         <pre><code class="language-css">{
-    "EVE_Nombres": "Prueba",
-    "EVE_Descripcion": "Prueba",
-    "EVE_Detalles": "Prueba",
-    "EVE_Fecha_Hora": "2020-02-01 00:00:00",
-    "EVE_Longitud": "2020",
-    "ID_Distrito": 1,
-    "EVE_Latitud": "2300",
-    "EVE_Fotografia": FILE
+    "ID_Camara": "1",
+    "ID_Usuario": "2",
+    "RD_Descripcion": "ddd",
+    "RD_Fecha_Hora": "2020-02-01 00:00:00",
+    "RD_Tipo_Delito": "robo",
+    "RD_Lugar_Delito": "LLL", 
+    "RD_Latitud": "0",
+    "RD_Longitud "0"
 }
 </code></pre>
                                     </div><!--//code-block-->
                                 </div><!--//section-block-->
-                                <div id="delete" class="section-block">
+                                <div id="list" class="section-block">
                                     <div class="code-block">
-                                        <h3>Eliminar Evento <span class="doc-title callout-success">POST</span></h3>
-                                        <h5 class="callout-title">
-                                            http://smartcityhyo.tk/api/Evento/Eliminar_Evento.php
-                                        </h5>
-                                        <pre><code class="language-css">{
-    "ID_Eventos": 1
-}
+                                        <h3>Listar Reporte Delito <span class="doc-title callout-info">GET</span></h3>
+                                        <h5 class="callout-title">http://smartcityhyo.tk/api/ReporteDelito/listar_delito.php</h5>
+                                        <pre><code class="language-css">No se ingresan parametros
 </code></pre>
                                     </div><!--//code-block-->
                                 </div><!--//section-block-->
@@ -166,16 +104,18 @@
                                                 <thead>
                                                     <tr>
                                                         <th>Módulo</th>
+
                                                     </tr>
                                                 </thead>
                                                 <tbody>
                                                     <tr>
-                                                        <td>Identidad Cultural</td>
-                                                    </tr>
+                                                        <td>Deteccion actos delictivos</td>
 
+                                                    </tr>                                                    
                                                 </tbody>
                                             </table>
                                         </div><!--//table-responsive-->
+
                                     </div><!--//section-block-->
                                 </section><!--//doc-section-->
                             </section><!--//doc-section-->
@@ -188,13 +128,8 @@
 
                                 <a class="nav-link scrollto" href="#code-section">Servicios</a>
                                 <nav class="doc-sub-menu nav flex-column">
-                                    <a class="nav-link scrollto" href="#list">Listar eventos</a>
-                                    <a class="nav-link scrollto" href="#consultID">Consultar eventos por ID</a>
-                                    <a class="nav-link scrollto" href="#consultDis">Consultar eventos por distrito</a>
-                                    <a class="nav-link scrollto" href="#listEventosProx">Listar Eventos Próximos</a>
-                                    <a class="nav-link scrollto" href="#insert">Insertar Evento</a>
-                                    <a class="nav-link scrollto" href="#delete">Eliminar Evento</a>
-                                    <a class="nav-link scrollto" href="#modulos">Módulos que lo utilizan</a>
+                                    <a class="nav-link scrollto" href="#insert">Insertar Reporte Delito</a>
+                                    <a class="nav-link scrollto" href="#list">Listar Reporte Delito</a>
                                 </nav><!--//nav-->
 
                             </nav><!--//doc-menu-->
@@ -225,3 +160,4 @@
 
 </body>
 </html>
+
