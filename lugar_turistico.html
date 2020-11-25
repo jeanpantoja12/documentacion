@@ -74,7 +74,6 @@
                                         <h3 class="logo">Agregar Lugar Turístico <span class="doc-title callout-success">POST</span></h3>
                                         <h5 class="callout-title">
                                             http://smartcityhyo.tk/api/LugarTuristico/Insert_lugar_turistico.php
-
                                         </h5>
                                         <pre><code class="language-css">{
     "LT_Nombre": "La Huaycha",
@@ -141,10 +140,11 @@
                                     <div class="code-block">
                                         <h3>Consultar Video Lugar Turistico por ID <span class="doc-title callout-info">GET</span></h3>
                                         <h5 class="callout-title">
-                                            http://smartcityhyo.tk/api/VideosTuristicos/ConsultaVideoPorIdLT.php?ID_Lugar_Turistico=9</h5>
-                                            <pre><code class="language-css">Ingresar por parametro: ID_Lugar_Turistico=?
+                                            http://smartcityhyo.tk/api/VideosTuristicos/ConsultaVideoPorIdLT.php?ID_Lugar_Turistico=9
+                                        </h5>
+                                        <pre><code class="language-css">Ingresar por parametro: ID_Lugar_Turistico=?
 </code></pre>
-</div><!--//code-block-->
+                                    </div><!--//code-block-->
                                 </div><!--//section-block-->
                                 <div id="delete" class="section-block">
                                     <div class="code-block">
@@ -158,7 +158,28 @@
 </code></pre>
                                     </div><!--//code-block-->
                                 </div><!--//section-block-->
-
+                                <div id="insertv" class="section-block">
+                                    <div class="code-block">
+                                        <h3>Insertar Visitas <span class="doc-title callout-success">POST</span></h3>
+                                        <h5 class="callout-title">
+                                            http://smartcityhyo.tk/api/LugarTuristico/Insertar_Visitas_Lugar.php
+                                        </h5>
+                                        <pre><code class="language-css">{
+    "ID_Lugar_Turistico": "1"
+}
+</code></pre>
+                                    </div><!--//code-block-->
+                                </div><!--//section-block-->
+                                <div id="consultv" class="section-block">
+                                    <div class="code-block">
+                                        <h3>Consultar Visitas <span class="doc-title callout-info">GET</span></h3>
+                                        <h5 class="callout-title">
+                                            http://smartcityhyo.tk/api/LugarTuristico/Consultar_Vistas_Lugar_turistico_ID.php?ID_Lugar_Turistico=9
+                                        </h5>
+                                        <pre><code class="language-css">Ingresar por parametro: ID_Lugar_Turistico=?
+</code></pre>
+                                    </div><!--//code-block-->
+                                </div><!--//section-block-->
                                 <section id="tables-section" class="doc-section">
                                     <h2 class="section-title">Módulos que lo utilizan</h2>
                                     <div id="modulos" class="section-block">
@@ -168,23 +189,18 @@
                                                 <thead>
                                                     <tr>
                                                         <th>Módulo</th>
-
                                                     </tr>
                                                 </thead>
                                                 <tbody>
                                                     <tr>
                                                         <td>Identidad Cultural</td>
-
                                                     </tr>
                                                     <tr>
                                                         <td scope="row">Contacto entre el Turista y la Ciudad</td>
-
                                                     </tr>
-
                                                 </tbody>
                                             </table>
                                         </div><!--//table-responsive-->
-
                                     </div><!--//section-block-->
                                 </section><!--//doc-section-->
                             </section><!--//doc-section-->
@@ -204,6 +220,8 @@
                                     <a class="nav-link scrollto" href="#list_vid">Listar Videos de Lugares</a>
                                     <a class="nav-link scrollto" href="#consult_vid">Consultar Videos de Lugares</a>
                                     <a class="nav-link scrollto" href="#delete">Eliminar Lugar Turístico</a>
+                                    <a class="nav-link scrollto" href="#insertv">Insertar Visitas</a>
+                                    <a class="nav-link scrollto" href="#consultv">Consultar Visitas</a>
                                     <a class="nav-link scrollto" href="#modulos">Módulos que lo utilizan</a>
                                 </nav><!--//nav-->
 

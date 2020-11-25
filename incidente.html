@@ -84,7 +84,6 @@
                                     </div><!--//content-->
                                 </div>
                                 <div id="insert" class="section-block">
-
                                     <div class="code-block">
                                         <h3 class="logo">Agregar Incidente <span class="doc-title callout-success">POST</span></h3>
                                         <h5 class="callout-title">http://smartcityhyo.tk/api/Incidente/Insertar_Incidente.php</h5>
@@ -126,7 +125,6 @@
                                         </div><!--//table-responsive-->
                                     </div><!--//code-block-->
                                 </div><!--//section-block-->
-
                                 <div id="consult_id" class="section-block">
                                     <div class="code-block">
                                         <h3>Consultar incidente por ID <span class="doc-title callout-info">GET</span></h3>
@@ -143,7 +141,24 @@
 </code></pre>
                                     </div><!--//code-block-->
                                 </div><!--//section-block-->
-
+                                <div id="delete" class="section-block">
+                                    <div class="code-block">
+                                        <h3>Eliminar Incidente <span class="doc-title callout-success">POST</span></h3>
+                                        <h5 class="callout-title">http://smartcityhyo.tk/api/Incidente/eliminar_incidentes.php</h5>
+                                        <pre><code class="language-css">{
+    "ID_Incidente": "1"
+}
+</code></pre>
+                                    </div><!--//code-block-->
+                                </div><!--//section-block-->
+                                <div id="list" class="section-block">
+                                    <div class="code-block">
+                                        <h3>Listar Incidente <span class="doc-title callout-info">GET</span></h3>
+                                        <h5 class="callout-title">http://smartcityhyo.tk/api/Incidente/listar_incidentes.php</h5>
+                                        <pre><code class="language-css">No se ingresan parametros
+</code></pre>
+                                    </div><!--//code-block-->
+                                </div><!--//section-block-->
 
                                 <section id="tables-section" class="doc-section">
                                     <h2 class="section-title">Módulos que lo utilizan</h2>
@@ -154,19 +169,15 @@
                                                 <thead>
                                                     <tr>
                                                         <th>Módulo</th>
-
                                                     </tr>
                                                 </thead>
                                                 <tbody>
                                                     <tr>
                                                         <td scope="row">Registro de incidencia de Empresas de Transporte</td>
-
                                                     </tr>
-
                                                 </tbody>
                                             </table>
                                         </div><!--//table-responsive-->
-
                                     </div><!--//section-block-->
                                 </section><!--//doc-section-->
                             </section><!--//doc-section-->
@@ -182,6 +193,8 @@
                                     <a class="nav-link scrollto" href="#insert">Agregar Incidente</a>
                                     <a class="nav-link scrollto" href="#consult_id">Consultar Incidente por ID</a>
                                     <a class="nav-link scrollto" href="#consult_veh">Consultar Incidente por Vehiculo</a>
+                                    <a class="nav-link scrollto" href="#delete">Eliminar Incidente</a>
+                                    <a class="nav-link scrollto" href="#list">Listar Incidente</a>
                                     <a class="nav-link scrollto" href="#modulos">Módulos que lo utilizan</a>
                                 </nav><!--//nav-->
 
