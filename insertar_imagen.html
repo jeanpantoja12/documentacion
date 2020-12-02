@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Web Services</title>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <!-- FontAwesome JS -->
+    <script defer src="assets/fontawesome/js/all.js"></script>
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">
+    <!-- Plugins CSS -->
+    <link rel="stylesheet" href="assets/plugins/prism/prism.css">
+    <link rel="stylesheet" href="assets/plugins/elegant_font/css/style.css">
+
+    <!-- Theme CSS -->
+    <link id="theme-style" rel="stylesheet" href="assets/css/styles.css">
+
+</head>
+
+<body class="body-blue">
+    <div class="page-wrapper">
+        <!-- ******Header****** -->
+        <header id="header" class="header">
+            <div class="container">
+                <div class="branding">
+                    <h1 class="logo">
+                        <a href="index.html">
+                            <span aria-hidden="true" class="icon_documents_alt icon"></span>
+                            <span class="text-highlight">Smartcity</span><span class="text-bold">HYO</span>
+                        </a>
+                    </h1>
+
+                </div><!--//branding-->
+
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item active">Guia de Desarrollo API REST </li>
+                    <li class="breadcrumb-item active">Insertar Imagen </li>
+                </ol>
+
+                
+
+            </div><!--//container-->
+        </header><!--//header-->
+        <div class="doc-wrapper">
+            <div class="container">
+                <div id="doc-header" class="doc-header text-center">
+                    <h1 class="doc-title"><i class="icon fa fa-file-image"></i> Insertar Imagen - Guía API REST
+</h1>
+                    <div class="meta"><i class="far fa-file-image"></i> Última Modificación: 02 de Diciembre, 2020</div>
+                </div><!--//doc-header-->
+                <div class="doc-body row">
+                    <div class="doc-content col-md-9 col-12 order-1">
+                        <div class="content-inner">
+
+
+                            <section id="code-section" class="doc-section">
+                                <h2 class="section-title">Guía de Desarrollo</h2>
+                                <div class="callout-block callout-success">
+                                    <div class="icon-holder">
+                                        <i class="fas fa-thumbs-up"></i>
+                                    </div><!--//icon-holder-->
+                                    <div class="content">
+                                        <h4 class="callout-title">Tip:</h4>
+                                        <p>El caso presentado representa al módulo Movilidad Urbana - Rutas de Transporte</p>
+                                    </div><!--//content-->
+                                </div>
+                                <div id="paso1" class="section-block">
+                                    <div class="code-block">
+                                        <h2 class="code">Insertar Imagen</h2>
+                                        <span class="doc-title callout-info">PASO 1: Crear la clase Conductor </span>
+                                        <br>
+                                    <div class="callout-block">
+                                        <h5>○ Abrir la carpeta <span class="doc-title callout-success">api</span></h5>
+                                        <h5 >○ Crear la carpeta  <span class="doc-title callout-success">objects </span> y abrir. </h5>
+                                        <h5 >○ Crear el archivo <span class="doc-title callout-success">Conductor.php</span> </h5>
+                                        <h5 >○ Colocar el siguiente código:</h5> 
+
+                                    </div>
+                                    <pre><code class="language-css">
+            
+class Conductor{
+  
+    // database connection and table name
+    private $conn;
+    private $table_name = "Tbl_Conductor";
+
+  
+    // object properties
+    public $ID_Conductor;
+    public $CON_Nombre;
+    public $CON_Apellidos;
+    public $CON_Telefono;
+    public $CON_Direccion;
+    public $CON_Licencia;
+    public $ID_Empresa_Transp;
+    public $CON_Latitud;
+    public $CON_Longitud;
+    public $CON_Status;
+    public $CON_FCM;
+    public $CON_Fotografia_Licencia;
+    public $CON_Contrasena;
+    public $CON_Email;
+    public $Nombre_Conductor;
+    public $Nombre_Empresa;
+
+//Despues de aquí se pondrán las funciones 
+}
+
+                                    </code></pre>
+                                    <span>No olvidar aperturar y cerrar la estructura php</span>
+
+                        </div><!--//code-block-->
+                        </div><!--//section-block-->
+
+  <div id="paso2" class="section-block">
+    <div class="code-block">
+
+                                    <span class="doc-title callout-info">PASO 2 : Crear el archivo API Insertar_Conductor.php </span>
+                                        <br>
+                                    <div class="callout-block">
+                                        <h5>○ Regresar a la carpeta <span class="doc-title callout-success">api</span></h5>
+                                        <h5 >○ Crear la carpeta  <span class="doc-title callout-success">Conductor </span> y abrir. </h5>
+                                        <h5 >○ Crear el archivo <span class="doc-title callout-success">Insertar_Conductor.php</span> </h5>
+                                        <h5 >○ Colocar el siguiente código:</h5> 
+
+                                    </div>
+                                    <pre><code class="language-css">
+
+header("Access-Control-Allow-Origin: *");
+header("Content-Type: application/json; charset=UTF-8");
+header("Access-Control-Allow-Methods: POST");
+header("Access-Control-Max-Age: 3600");
+header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
+  
+include_once '../config/database.php';
+  
+include_once '../objects/Conductor.php';
+  
+$database = new Database();
+$db = $database->getConnection();
+  
+$conductor = new Conductor($db);
+
+ if(is_uploaded_file($_FILES["conductor_image"]["tmp_name"])){
+     $tmp_file = $_FILES["conductor_image"]["tmp_name"];
+     $img_name = $_FILES["conductor_image"]["name"];
+     $upload_dir = "../images/".$img_name;
+     $conductor->CON_Fotografia_Licencia = $upload_dir;
+ }
+  
+if( 
+    !empty($_POST["CON_Nombre"]) &&
+    !empty($_POST["CON_Apellidos"]) &&
+    !empty($_POST["CON_Telefono"]) &&
+    !empty($_POST["CON_Direccion"]) &&
+    !empty($_POST["CON_Licencia"]) &&
+    !empty($_POST["ID_Empresa_Transp"]) &&
+    !empty($_POST["CON_Latitud"]) &&
+    !empty($_POST["CON_Longitud"]) &&
+    !empty($_POST["CON_Status"]) &&
+    !empty($_POST["CON_FCM"]) &&
+    !empty($_POST["CON_Email"]) &&
+    !empty($_POST["CON_Contrasena"])
+)
+    {
+  
+    // set product property values
+    $conductor->CON_Nombre = $_POST["CON_Nombre"];
+    $conductor->CON_Apellidos = $_POST["CON_Apellidos"];
+    $conductor->CON_Telefono = $_POST["CON_Telefono"];
+    $conductor->CON_Direccion = $_POST["CON_Direccion"];
+    $conductor->CON_Licencia = $_POST["CON_Licencia"];
+    $conductor->ID_Empresa_Transp = $_POST["ID_Empresa_Transp"];
+    $conductor->CON_Latitud = $_POST["CON_Latitud"];
+    $conductor->CON_Longitud = $_POST["CON_Longitud"];
+    $conductor->CON_Status = $_POST["CON_Status"];
+    $conductor->CON_FCM = $_POST["CON_FCM"];
+    $conductor->CON_Email = $_POST["CON_Email"];
+    $conductor->CON_Contrasena = $_POST["CON_Contrasena"];
+
+    if($conductor->create() && move_uploaded_file($tmp_file, $upload_dir)){
+  
+        http_response_code(201);
+  
+        echo json_encode(array("message" => "Conductor creado correctamente.","status" => "Imagen subida"));
+    }
+  
+    else{
+        
+        http_response_code(503);
+  
+        echo json_encode(array("message" => "Error en la solicitud"));
+    }
+}
+  
+// tell the obra data is incomplete
+else{
+  
+    http_response_code(400);
+
+    echo json_encode(array("message" => "Error, datos incompletos"));
+}
+              
+
+
+                                    </code></pre>
+                                    <span>No olvidar aperturar y cerrar la estructura php</span>
+
+
+
+
+          </div><!--//code-block-->
+                        </div><!--//section-block-->
+
+  <div id="paso3" class="section-block">
+    <div class="code-block">
+                                    <span class="doc-title callout-info">PASO 3: Implementar el método create() </span>
+                                        <br>
+                                    <div class="callout-block">
+                                        <h5>○ Regresar a la carpeta <span class="doc-title callout-success">objects</span></h5>
+                                        <h5 >○ Abrir el archivo  <span class="doc-title callout-success">Conductor.php </span> y abrir. </h5>
+                                        <h5 >○ Colocar el siguiente código dentro de la clase <span class="doc-title callout-success">Condcutor.</span>
+                                        <h5 >○ Función <span class="doc-title callout-success">create.</span> 
+
+
+                                    </div>
+                                    <pre><code class="language-css">
+            
+function create(){
+  
+    $query = "INSERT INTO
+                " . $this->table_name . "
+            SET CON_Nombre=:CON_Nombre, CON_Apellidos=:CON_Apellidos, CON_Telefono=:CON_Telefono, CON_Direccion=:CON_Direccion, CON_Licencia=:CON_Licencia, ID_Empresa_Transp=:ID_Empresa_Transp, CON_Latitud=:CON_Latitud, CON_Longitud=:CON_Longitud, CON_Status=:CON_Status, CON_FCM=:CON_FCM, CON_Fotografia_Licencia=:CON_Fotografia_Licencia, CON_Contrasena=:CON_Contrasena, CON_Email=:CON_Email";
+
+    $stmt = $this->conn->prepare($query);
+  
+    $this->CON_Nombre=htmlspecialchars(strip_tags($this->CON_Nombre));
+    $this->CON_Apellidos=htmlspecialchars(strip_tags($this->CON_Apellidos));
+    $this->CON_Telefono=htmlspecialchars(strip_tags($this->CON_Telefono));
+    $this->CON_Direccion=htmlspecialchars(strip_tags($this->CON_Direccion));
+    $this->CON_Licencia=htmlspecialchars(strip_tags($this->CON_Licencia));
+    $this->ID_Empresa_Transp=htmlspecialchars(strip_tags($this->ID_Empresa_Transp));
+    $this->CON_Latitud=htmlspecialchars(strip_tags($this->CON_Latitud));
+    $this->CON_Longitud=htmlspecialchars(strip_tags($this->CON_Longitud));
+    $this->CON_Status=htmlspecialchars(strip_tags($this->CON_Status));
+    $this->CON_FCM=htmlspecialchars(strip_tags($this->CON_FCM));
+    $this->CON_Fotografia_Licencia=htmlspecialchars(strip_tags($this->CON_Fotografia_Licencia));
+    $this->CON_Contrasena=htmlspecialchars(strip_tags($this->CON_Contrasena));
+    $this->CON_Email=htmlspecialchars(strip_tags($this->CON_Email));
+
+    $stmt->bindParam(":CON_Nombre", $this->CON_Nombre);
+    $stmt->bindParam(":CON_Apellidos", $this->CON_Apellidos);
+    $stmt->bindParam(":CON_Telefono", $this->CON_Telefono);
+    $stmt->bindParam(":CON_Direccion", $this->CON_Direccion);
+    $stmt->bindParam(":CON_Licencia", $this->CON_Licencia);
+    $stmt->bindParam(":ID_Empresa_Transp", $this->ID_Empresa_Transp);
+    $stmt->bindParam(":CON_Latitud", $this->CON_Latitud);
+    $stmt->bindParam(":CON_Longitud", $this->CON_Longitud);
+    $stmt->bindParam(":CON_Status", $this->CON_Status);
+    $stmt->bindParam(":CON_FCM", $this->CON_FCM);
+    $stmt->bindParam(":CON_Fotografia_Licencia", $this->CON_Fotografia_Licencia);
+    $stmt->bindParam(":CON_Contrasena", $this->CON_Contrasena);
+    $stmt->bindParam(":CON_Email", $this->CON_Email);
+    if($stmt->execute()){
+        return true;
+    }
+
+    return false;
+      
+}
+
+
+                                    </code></pre>
+                                    <span>No olvidar aperturar y cerrar la estructura php</span>
+
+
+
+
+                                    </div><!--//code-block-->
+                                </div><!--//section-block-->
+
+                               
+
+                                <section id="tables-section" class="doc-section">
+                                    <h2 class="section-title">Video Tutorial</h2>
+                                    <div id="videotutorial" class="section-block">
+                                        <br />
+                                        <div class="table-responsive">
+                                            <table class="table">
+                                                <thead>
+                                                     <tr>
+                                                        <iframe src="https://drive.google.com/file/d/1oWLfo7JeEiA7Pzs_uHZJD-zr_jPsWLOb/preview" width="800" height="480"></iframe>
+                                                        <th> link: <a href="https://drive.google.com/file/d/1oWLfo7JeEiA7Pzs_uHZJD-zr_jPsWLOb/view"> Videotutorial - Insertar Imagen</a> </th>
+                                                        </th>
+                                                    </tr>
+
+                                                </thead>
+                                                
+                                            </table>
+                                        </div><!--//table-responsive-->
+                                    </div><!--//section-block-->
+                                </section><!--//doc-section-->
+                            </section><!--//doc-section-->
+                        </div><!--//content-inner-->
+                    </div><!--//doc-content-->
+                    <div class="doc-sidebar col-md-3 col-12 order-0 d-none d-md-flex">
+                        <div id="doc-nav" class="doc-nav">
+
+                            <nav id="doc-menu" class="nav doc-menu flex-column sticky">
+
+                                <a class="nav-link scrollto" href="#code-section">CREACIÓN API REST:</a>
+                                <nav class="doc-sub-menu nav flex-column">
+                                    <a class="nav-link scrollto" href="#paso1">PASO 1: Crear la clase</a>
+                                    <a class="nav-link scrollto" href="#paso2">PASO 2: Crear el método</a>
+                                    <a class="nav-link scrollto" href="#paso3">PASO 3: Implementar el método</a>
+                                   
+                                    <a class="nav-link scrollto" href="#videotutorial">Video Tutorial</a>
+                                </nav><!--//nav-->
+
+                            </nav><!--//doc-menu-->
+
+                        </div>
+                    </div><!--//doc-sidebar-->
+                </div><!--//doc-body-->
+            </div><!--//container-->
+        </div><!--//doc-wrapper-->
+
+
+    </div><!--//page-wrapper-->
+
+    <footer id="footer" class="footer text-center">
+        <div class="container">
+            <!--/* This template is free as long as you keep the footer attribution link. If you'd like to use the template without the attribution link, you can buy the commercial license via our website: themes.3rdwavemedia.com Thank you for your support. :) */-->
+            <small class="copyright">Creado por el grupo de <a href="#">Web Services</a></small>
+
+        </div><!--//container-->
+    </footer><!--//footer-->
+    <!-- Main Javascript -->
+    <script type="text/javascript" src="assets/plugins/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="assets/plugins/prism/prism.js"></script>
+    <script type="text/javascript" src="assets/plugins/jquery-scrollTo/jquery.scrollTo.min.js"></script>
+    <script type="text/javascript" src="assets/plugins/stickyfill/dist/stickyfill.min.js"></script>
+    <script type="text/javascript" src="assets/js/main.js"></script>
+
+</body>
+</html>
+

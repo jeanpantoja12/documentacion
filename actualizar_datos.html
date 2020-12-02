@@ -1,0 +1,328 @@
+﻿<!DOCTYPE html>
+<html lang="en"> 
+<head>
+    <title>Web Services</title>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <!-- FontAwesome JS -->
+    <script defer src="assets/fontawesome/js/all.js"></script>
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">
+    <!-- Plugins CSS -->
+    <link rel="stylesheet" href="assets/plugins/prism/prism.css">
+    <link rel="stylesheet" href="assets/plugins/elegant_font/css/style.css">
+
+    <!-- Theme CSS -->
+    <link id="theme-style" rel="stylesheet" href="assets/css/styles.css">
+
+</head>
+
+<body class="body-orange">
+    <div class="page-wrapper">
+        <!-- ******Header****** -->
+        <header id="header" class="header">
+            <div class="container">
+                <div class="branding">
+                    <h1 class="logo">
+                        <a href="index.html">
+                            <span aria-hidden="true" class="icon_documents_alt icon"></span>
+                            <span class="text-highlight">Smartcity</span><span class="text-bold">HYO</span>
+                        </a>
+                    </h1>
+
+                </div><!--//branding-->
+
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item active">Guia de Desarrollo API REST </li>
+                    <li class="breadcrumb-item active">Actualizar datos </li>
+                </ol>
+
+                
+
+            </div><!--//container-->
+        </header><!--//header-->
+        <div class="doc-wrapper">
+            <div class="container">
+                <div id="doc-header" class="doc-header text-center">
+                    <h1 class="doc-title"><i class="icon fa fa-file-download"></i> Actualizar datos - Guía API REST
+</h1>
+                    <div class="meta"><i class="far fa-edit"></i> Última Modificación: 02 de Diciembre, 2020</div>
+                </div><!--//doc-header-->
+                <div class="doc-body row">
+                    <div class="doc-content col-md-9 col-12 order-1">
+                        <div class="content-inner">
+
+
+                            <section id="code-section" class="doc-section">
+                                <h2 class="section-title">Guía de Desarrollo</h2>
+                                <div class="callout-block callout-success">
+                                    <div class="icon-holder">
+                                        <i class="fas fa-thumbs-up"></i>
+                                    </div><!--//icon-holder-->
+                                    <div class="content">
+                                        <h4 class="callout-title">Tip:</h4>
+                                        <p>El caso presentado representa al módulo Lugar Turístico</p>
+                                    </div><!--//content-->
+                                </div>
+                                <div id="paso1" class="section-block">
+                                    <div class="code-block">
+                                        <h2 class="code">Actualizar datos </h2>
+                                        <span class="doc-title callout-info">PASO 1: Crear la clase Lugarturistico </span>
+                                        <br>
+                                    <div class="callout-block">
+                                        <h5>○ Abrir la carpeta <span class="doc-title callout-success">api</span></h5>
+                                        <h5 >○ Crear la carpeta  <span class="doc-title callout-success">objects </span> y abrir. </h5>
+                                        <h5 >○ Crear el archivo <span class="doc-title callout-success">Lugar_Turistico.php.</span> </h5>
+                                        <h5 >○ Colocar el siguiente código:</h5> 
+
+                                    </div>
+                                    <pre><code class="language-css">
+            
+                    class Lugarturistico { 
+                    private $conn; 
+                    private $table_name = "Tbl_Lugar_Turistico";     
+                    public $ID_Lugar_Turistico;     
+                    public $LT_Nombre;     
+                    public $LT_Descripcion;     
+                    public $LT_URL_Map;     
+                    public $ID_Distrito;     
+                    public $Distrito;     
+                    public $LT_Hora_Inicio;     
+                    public $LT_Hora_Fin;     
+                    public $LT_Latitud;     
+                    public $LT_Longitud; 
+                    public function __construct($db){ 
+                        $this->conn = $db; 
+                    } 
+                    //Despues de aquí se pondrán las funciones 
+                }
+
+                                    </code></pre>
+                                    <span>No olvidar aperturar y cerrar la estructura php</span>
+
+                        </div><!--//code-block-->
+                        </div><!--//section-block-->
+
+  <div id="paso2" class="section-block">
+    <div class="code-block">
+
+                                    <span class="doc-title callout-info">PASO 2 : Crear el archivo API Update_Lugar_Turistico.php </span>
+                                        <br>
+                                    <div class="callout-block">
+                                        <h5>○ Regresar a la carpeta <span class="doc-title callout-success">api</span></h5>
+                                        <h5 >○ Crear la carpeta  <span class="doc-title callout-success">LugarTuristico </span> y abrir. </h5>
+                                        <h5 >○ Crear el archivo <span class="doc-title callout-success">Update_Lugar_Turistico.php</span> </h5>
+                                        <h5 >○ Colocar el siguiente código:</h5> 
+
+                                    </div>
+                                    <pre><code class="language-css">
+
+header("Access-Control-Allow-Origin: *"); 
+header("Content-Type: application/json; charset=UTF-8"); 
+header("Access-Control-Allow-Methods: POST"); 
+header("Access-Control-Max-Age: 3600"); 
+header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With"); 
+  
+include_once '../config/database.php'; 
+include_once '../objects/Lugar_Turistico.php';   
+$database = new Database(); 
+$db = $database->getConnection();   
+
+$lugart = new Lugarturistico($db); 
+  
+
+$data = json_decode(file_get_contents("php://input")); 
+ 
+if(  
+    !empty($data->LT_Nombre) && 
+    !empty($data->LT_Descripcion) && 
+    !empty($data->LT_URL_Map) && 
+    !empty($data->ID_Distrito) && 
+    !empty($data->LT_Hora_Inicio) && 
+    !empty($data->LT_Hora_Fin) &&  
+    !empty($data->LT_Latitud) && 
+    !empty($data->LT_Longitud) 
+){ 
+    // set ID property of product to be edited 
+    $lugart->ID_Lugar_Turistico = $data->ID_Lugar_Turistico; 
+     
+    // set product property values 
+    $lugart->LT_Nombre = $data->LT_Nombre; 
+    $lugart->LT_Descripcion = $data->LT_Descripcion; 
+    $lugart->LT_URL_Map = $data->LT_URL_Map; 
+    $lugart->ID_Distrito = $data->ID_Distrito; 
+    $lugart->LT_Hora_Inicio = $data->LT_Hora_Inicio; 
+    $lugart->LT_Hora_Fin = $data->LT_Hora_Fin; 
+    $lugart->LT_Latitud = $data->LT_Latitud; 
+    $lugart->LT_Longitud = $data->LT_Longitud; 
+ 
+    if($lugart->update()){ 
+     
+        http_response_code(200); 
+     
+        echo json_encode(array("message" => "Datos actualizados correctamente.")); 
+    } 
+         
+    else{ 
+            
+        http_response_code(503); 
+     
+        echo json_encode(array("message" => "No se pudo actualizar el lugar turistico")); 
+    } 
+}else{     http_response_code(404); 
+     
+        echo json_encode(array("message" => "Error, datos incompletos")); 
+} 
+             
+
+
+                                    </code></pre>
+                                    <span>No olvidar aperturar y cerrar la estructura php</span>
+
+
+
+
+          </div><!--//code-block-->
+                        </div><!--//section-block-->
+
+  <div id="paso3" class="section-block">
+    <div class="code-block">
+                                    <span class="doc-title callout-info">PASO 3: Implementar el método update() </span>
+                                        <br>
+                                    <div class="callout-block">
+                                        <h5>○ Regresar a la carpeta <span class="doc-title callout-success">objects</span></h5>
+                                        <h5 >○ Abrir el archivo  <span class="doc-title callout-success">Lugar_Turistico.php </span> y abrir. </h5>
+                                        <h5 >○ Colocar el siguiente código dentro de la clase <span class="doc-title callout-success">Lugarturistico.</span>
+                                        <h5 >○ Función <span class="doc-title callout-success">update.</span> 
+
+
+                                    </div>
+                                    <pre><code class="language-css">
+            
+function update (){ 
+    $query = "UPDATE 
+                " . $this->table_name . " 
+            SET  
+            LT_Nombre = :LT_Nombre,  
+            LT_Descripcion = :LT_Descripcion,  
+            LT_URL_Map = :LT_URL_Map,  
+            ID_Distrito = :ID_Distrito,  
+            LT_Hora_Inicio = :LT_Hora_Inicio,  
+            LT_Hora_Fin = :LT_Hora_Fin, 
+            LT_Latitud = :LT_Latitud,  
+            LT_Longitud = :LT_Longitud 
+            WHERE 
+                ID_Lugar_Turistico = :ID_Lugar_Turistico"; 
+ 
+    $stmt = $this->conn->prepare($query); 
+
+    $this->ID_Lugar_Turistico=htmlspecialchars(strip_tags($this->ID_Lugar_Turistico)); 
+    $this->LT_Nombre=htmlspecialchars(strip_tags($this->LT_Nombre)); 
+    $this->LT_Descripcion=htmlspecialchars(strip_tags($this->LT_Descripcion)); 
+    $this->LT_URL_Map=htmlspecialchars(strip_tags($this->LT_URL_Map)); 
+    $this->ID_Distrito=htmlspecialchars(strip_tags($this->ID_Distrito)); 
+    $this->LT_Hora_Inicio=htmlspecialchars(strip_tags($this->LT_Hora_Inicio)); 
+    $this->LT_Hora_Fin=htmlspecialchars(strip_tags($this->LT_Hora_Fin)); 
+    $this->LT_Latitud=htmlspecialchars(strip_tags($this->LT_Latitud));     $this->LT_Longitud=htmlspecialchars(strip_tags($this->LT_Longitud));     
+    $stmt->bindParam(":ID_Lugar_Turistico", $this->ID_Lugar_Turistico); 
+    $stmt->bindParam(":LT_Nombre", $this->LT_Nombre); 
+    $stmt->bindParam(":LT_Descripcion", $this->LT_Descripcion); 
+    $stmt->bindParam(":LT_URL_Map", $this->LT_URL_Map); 
+    $stmt->bindParam(":ID_Distrito", $this->ID_Distrito); 
+    $stmt->bindParam(":LT_Hora_Inicio", $this->LT_Hora_Inicio); 
+    $stmt->bindParam(":LT_Hora_Fin", $this->LT_Hora_Fin); 
+     $stmt->bindParam(":LT_Latitud", $this->LT_Latitud); 
+    $stmt->bindParam(":LT_Longitud", $this->LT_Longitud);    
+    if($stmt->execute()){ 
+        return true; 
+     
+    } 
+  
+    return false; 
+} 
+ 
+
+
+                                    </code></pre>
+                                    <span>No olvidar aperturar y cerrar la estructura php</span>
+
+
+
+
+                                    </div><!--//code-block-->
+                                </div><!--//section-block-->
+
+                               
+
+                                <section id="tables-section" class="doc-section">
+                                    <h2 class="section-title">Video Tutorial</h2>
+                                    <div id="videotutorial" class="section-block">
+                                        <br />
+                                        <div class="table-responsive">
+                                            <table class="table">
+                                                <thead>
+                                                     <tr>
+                                                        <iframe src="https://drive.google.com/file/d/1QznGgBkWllJEFmn7gYJ8eujehRIef-a8/preview" width="800" height="480"></iframe>
+                                                        <th> link: <a href="https://drive.google.com/file/d/1QznGgBkWllJEFmn7gYJ8eujehRIef-a8/view" target="_blank"> Videotutorial - Actualizar Datos </a> </th>
+                                                        </th>
+                                                    </tr>
+
+                                                </thead>
+                                                
+                                            </table>
+                                        </div><!--//table-responsive-->
+                                    </div><!--//section-block-->
+                                </section><!--//doc-section-->
+                            </section><!--//doc-section-->
+                        </div><!--//content-inner-->
+                    </div><!--//doc-content-->
+                    <div class="doc-sidebar col-md-3 col-12 order-0 d-none d-md-flex">
+                        <div id="doc-nav" class="doc-nav">
+
+                            <nav id="doc-menu" class="nav doc-menu flex-column sticky">
+
+                                <a class="nav-link scrollto" href="#code-section">CREACIÓN API REST:</a>
+                                <nav class="doc-sub-menu nav flex-column">
+                                    <a class="nav-link scrollto" href="#paso1">PASO 1: Crear la clase</a>
+                                    <a class="nav-link scrollto" href="#paso2">PASO 2: Crear el método</a>
+                                    <a class="nav-link scrollto" href="#paso3">PASO 3: Implementar el método</a>
+                                   
+                                    <a class="nav-link scrollto" href="#videotutorial">Video Tutorial</a>
+                                </nav><!--//nav-->
+
+                            </nav><!--//doc-menu-->
+
+                        </div>
+                    </div><!--//doc-sidebar-->
+                </div><!--//doc-body-->
+            </div><!--//container-->
+        </div><!--//doc-wrapper-->
+
+
+    </div><!--//page-wrapper-->
+
+    <footer id="footer" class="footer text-center">
+        <div class="container">
+            <!--/* This template is free as long as you keep the footer attribution link. If you'd like to use the template without the attribution link, you can buy the commercial license via our website: themes.3rdwavemedia.com Thank you for your support. :) */-->
+            <small class="copyright">Creado por el grupo de <a href="#">Web Services</a></small>
+
+        </div><!--//container-->
+    </footer><!--//footer-->
+    <!-- Main Javascript -->
+    <script type="text/javascript" src="assets/plugins/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="assets/plugins/prism/prism.js"></script>
+    <script type="text/javascript" src="assets/plugins/jquery-scrollTo/jquery.scrollTo.min.js"></script>
+    <script type="text/javascript" src="assets/plugins/stickyfill/dist/stickyfill.min.js"></script>
+    <script type="text/javascript" src="assets/js/main.js"></script>
+
+</body>
+</html>
+
