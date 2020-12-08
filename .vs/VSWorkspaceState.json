@@ -1,8 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\assets"
+    "\\assets",
+    "\\assets\\css"
   ],
-  "SelectedNode": "\\provincia.html",
+  "SelectedNode": "\\assets\\css\\diagram-style.css",
   "PreviewInSolutionExplorer": false
 }

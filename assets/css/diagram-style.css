@@ -1,0 +1,438 @@
+﻿/******************************/
+/* general global preferences */
+/******************************/
+html, body {
+    box-sizing: border-box
+}
+/* [MANDATORY] all size calcs must include padding and border */
+*::before, *::after, * {
+    box-sizing: inherit
+}
+/* [MANDATORY], ditto, but it WILL inherit any changes */
+/*
+    responsive fontsize:
+    p1(320,14) p2(1280,20) => 0.00625x + 12
+
+    Assumes 16px browser default fontsize and uses
+    REM to adapt to user modified font settings
+
+    In the remainder of this <style> sheet you will find 
+    an explanation of the algebra used in this document.
+*/
+html {
+    font-size: calc(0.625vmin + 0.75rem)
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    cursor: default;
+    font-size: 1rem;
+    /*font-family: Roboto,Arial,Helvetica,sans-serif;*/
+    background-color: Gainsboro;
+    color: black
+}
+
+h1 {
+    font-size: 2rem
+}
+/* Override of FF+ default nesting behaviour */
+
+/* generic flexbox shortcuts */
+[F] {
+    display: flex
+}
+
+[R] {
+    flex-direction: row
+}
+/* horizontal: row of 1:N columns (FBL default) */
+[C] {
+    flex-direction: column
+}
+/* vertical: column of 1:N rows   */
+[W] {
+    flex-wrap: wrap
+}
+
+/* Prevents (inadverted) text selection by user (when double, double clicking) */
+[no-select] {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -moz-appearance: none;
+    -webkit-appearance: none
+}
+
+/* Show element outlines for debugging (use in <body> tag) */
+[outlines="1"] * {
+    outline: 1px dashed purple
+}
+
+/* Color to show nesting level for debugging (use in <body> tag) */
+[hover="1"] :not(section) :hover {
+    background-color: rgba(255,0,0,.2)
+}
+
+/*
+    KNOT LOGIC
+    'branch' - 1:N 'node',1:N 'node.step' and 1:N 'step'
+    'node'   - 1:N 'node' and 1:N 'step'
+    'step'   - 1 data-symbol
+
+    You can use flexbox shortcut attributes R (horizontal) and C (vertical) to 
+    determine the nesting direction of 'branch'es and 'node's. (R) is optional
+    as horizontal is the default direction. 
+
+    (Depending on orientation of the knots, all kinds of nestings might work,
+     but that will require trial and error, fiddling.)
+
+    SPECIFICATIONS
+    1) 'branch' has no specific rules, but acts as a container for 'node's
+       and to distinguish from 'node' and 'step'. 
+       Add your own rules for specific 'branch' styling like fonts,colors,border,spacing.
+
+    2) 'node' and 'step' only use :before and :after to position and draw
+       connecting lines.
+
+       'node'      horizontal line attachement
+       'step'      vertical
+       'node.step' both
+
+    3) 'node.step' can be empty (no 'data-symbol'), in which case it will only
+       draw cross lines.
+
+    4) 'start' and 'stop' values are used to prevent drawing of
+       starting and ending lines.
+
+    5) Knot 'lft', 'ctr' and 'rgt' values define how sibling nodes are connected
+       'lft' - left hand node, only one
+       'ctr' - center nodes, can be more than one 
+       'rgt' - right hand node, only one
+
+    My motivation for use of 'data-* attributes' instead of classes is they
+    are easy accessible as javascript variables:
+
+    someElement.dataset.chart
+    someElement.dataset.knot
+    someElement.dataset.symbol
+    
+*/
+
+/***************/
+/* Chart Setup */
+/***************/
+/* If you want the knots distributed as-is, remove 'align-items' */
+[data-chart] {
+    display: flex;
+    align-items: center
+}
+/* [OPTIONAL], try! */
+[data-knot] {
+    display: flex;
+    flex-grow: 1
+}
+/* [MANDATORY] */
+
+/* default alignments */
+[data-knot] {
+    justify-content: center
+}
+
+[data-knot*="node"] {
+    align-items: stretch
+}
+
+[data-knot*="step"] {
+    align-items: flex-start
+}
+
+/* this code keeps the lines connect to the symbols */
+[data-knot] {
+    position: relative;
+    z-index: 1
+}
+    /* new stacking context */
+    [data-knot]:before,
+    [data-knot]:after {
+        position: absolute;
+        z-index: -1;
+        content: ''
+    }
+    /* put some character in 'content' to keep track when debugging */
+
+    /* Horizontal lines ('node') setup */
+    [data-knot]:before {
+        top: 1px
+    }
+    /* adjust -+1 for thickess of outlines */
+    [data-knot]:after {
+        bottom: -1px
+    }
+
+[data-knot*="node"]:before, [data-knot*="node"]:after {
+    height: 0px /* for IE11 */;
+    width: 50%
+}
+
+/* Vertical lines ('step') setup */
+[data-knot*="step"]:before, [data-knot*="step"]:after {
+    width: 0px /* for IE11 */;
+    left: 50%;
+    right: 50%
+}
+
+/* positioning of the lines ('lft','ctr','rgt') */
+[data-knot*="ctr"]:before, [data-knot*="ctr"]:after {
+    width: 100%;
+    left: 0
+}
+
+/* (EITHER) Handles document reading direction (dir="ltr" in <body>) */
+[dir="ltr"] [data-knot*="lft"]:before, [dir="ltr"] [data-knot*="lft"]:after {
+    left: 50%
+}
+
+[dir="ltr"] [data-knot*="rgt"]:before, [dir="ltr"] [data-knot*="rgt"]:after {
+    right: 50%
+}
+
+[dir="rtl"] [data-knot*="lft"]:before, [dir="rtl"] [data-knot*="lft"]:after {
+    right: 50%
+}
+
+[dir="rtl"] [data-knot*="rgt"]:before, [dir="rtl"] [data-knot*="rgt"]:after {
+    left: 50%
+}
+
+/* (OR) For use without [dir]
+[data-knot*="lft"]:before, [data-knot*="lft"]:after { left : 50% }
+[data-knot*="rgt"]:before, [data-knot*="rgt"]:after { right: 50% }
+*/
+
+/* line coloring */
+[data-knot*="node"]:before, [data-knot*="node.step"]:after,
+[data-knot*="step"]:before, [data-knot*="step"]:after {
+    outline: 1px solid #666
+}
+
+/* no line drawing cases */
+[data-knot="step"]:after, /* notice the missing '*' */
+[data-knot*="start"]:before, [data-knot*="stop"]:after {
+    outline: none
+}
+
+/*
+    responsive sizes: T/B p1(320,6) p2(1280,24) and L/R p1(320,4) p2(1280,16)
+    modify these to meet specific requirements.
+*/
+[data-knot*="step"] {
+    padding: 1.875vmin 1.25vmin
+}
+
+    [data-knot*="step"]:before {
+        height: 1.875vmin
+    }
+    /* Same height as [data-step] T/B padding */
+    [data-knot*="step"]:after {
+        height: calc(100% - 1.875vmin)
+    }
+/* pct to from below (minus T/B padding) */
+
+/****************/
+/* Symbol Setup */
+/****************/
+/*
+    Chart 'data-symbol's, flexbox intended use
+
+    FBL (V)     FBL (H)      Any
+    --------    -------      -------
+    (S)ymbol -> (H)eader  -> content
+             -> (C)ontent -> content
+             -> (F)ooter  -> content
+*/
+[data-symbol],
+[data-symbol] > * {
+    display: flex
+}
+    /* S,H,C,F are flexbox parent containers */
+    [data-symbol] > * > * {
+        flex-grow: 1
+    }
+/* sets default to 'fill' for content of H,C,F */
+
+[data-symbol] {
+    flex-direction: column
+}
+    /* a column of 1:N rows */
+    [data-symbol] > .header {
+        align-items: center
+    }
+
+/* styling */
+[data-symbol] {
+    text-decoration: none;
+    color: currentColor;
+    background-color: transparent
+}
+
+    [data-symbol] > .header {
+        padding: .25rem .5rem;
+        text-align: center;
+        border-radius: 50%;
+        /* responsive sizes: p1(320,50) p2(1920,180) */
+        width: calc(8.125vmin + 24px);
+        height: calc(8.125vmin + 24px);
+        /*
+        responsive fontsize: p1(320,6) p2(1920,20)
+        Whether this works as expected depends on the minimum browser
+        fontsize set by the user (content may overflow .header when set >6px)
+
+        Tested defaults on W10:
+        Edge2020 overflows, while Chrome, Firefox and IE11 do not
+    */
+        font-size: calc(.875vmin + 3.2px)
+    }
+
+[clr="0"] {
+    background-color: Gainsboro;
+    color: black
+}
+
+.header, /* .header here saves coding html */
+[clr="1"] {
+    background-color: #fefefe;
+    color: #1e1e1e
+}
+
+[clr="2"] {
+    background-color: #1e1e1e;
+    color: Yellow;
+    font-weight: bolder
+}
+
+[clr="3"] {
+    background-color: #ffcc01;
+    color: #1e1e1e;
+    font-weight: bolder
+}
+
+/**************************************/
+/* Google Material Component inspired */
+/**************************************/
+[icon] {
+    display: inline-flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    /* responsive sizes: p1(320,14) p2(1280,32) */
+    width: calc(1.875vmin + 8px);
+    height: calc(1.875vmin + 8px);
+    line-height: calc(1.875vmin + 8px);
+    font-size: calc(1.875vmin + 8px);
+    /*
+        A bit overdone for just one icon, use inline SVG instead,
+        or create a small (subset) iconfont at https://icomoon.io
+
+        icon list: https://material.io/resources/icons/?style=baseline
+    */
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    letter-spacing: normal;
+    text-transform: none;
+    white-space: nowrap;
+    word-wrap: normal;
+    opacity: 1; /* GMC uses <1 here and 1 on :hover */
+    -moz-font-feature-settings: 'liga';
+    font-feature-settings: 'liga';
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/******************/
+/* simple banding */
+/******************/
+[band] {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-content: center;
+    padding: calc(5vh + 48px) calc(19.5vw - 54.4px)
+}
+/*
+    responsive padding
+    T/B: p1(320,64) p2(1920,144) => y = 0.5x   + 48
+    L/R: p1(320, 8) p2(1920,320) => y = 0.195x - 54.4
+
+    This construction keeps content nicely center aligned within
+    given space.
+*/
+/* [OPTIONAL] */
+@media screen and (max-width: 319px) {
+    [band] {
+        padding: 1.5rem 8px
+    }
+}
+
+@media screen and (min-width:1921px) {
+    [band] {
+        padding: 1.5rem 320px
+    }
+}
+
+/***********************/
+/* Some extra eyecandy */
+/***********************/
+[data-symbol] > .header {
+    box-shadow: 0px 2px 1px -1px rgba(0,0,0,.20), 0px 1px 1px 0px rgba(0,0,0,.14), 0px 1px 3px 0px rgba(0,0,0,.12); /* GMC elevation 1dp */
+}
+
+    [data-symbol] > .header:hover:not(:focus) {
+        transform: scale(1.01)
+    }
+
+    [data-symbol] > .header:active:not(:focus) {
+        transform: scale(0.995);
+        box-shadow: 0px 3px 5px -1px rgba(0,0,0,.2), 0px 5px 8px 0px rgba(0,0,0,.14), 0px 1px 14px 0px rgba(0,0,0,.12); /* GMC elevation 5dp */
+    }
+
+    [data-symbol] > .header:hover {
+        box-shadow: 0px 3px 5px -1px rgba(0,0,0,.2), 0px 6px 10px 0px rgba(0,0,0,.14), 0px 1px 18px 0px rgba(0,0,0,.12); /* GMC elevation 6dp */
+    }
+/*
+    ALGEBRA for responsive sizing
+
+    ALL responsive sizes in this document use the 'point-slope' variation
+    of the 'definition of a straight line: y=mx+b':
+    (https://www.mathsisfun.com/algebra/line-equation-point-slope.html)
+
+    y - y1 = y1 + m(x - x1) <=> y = y1 + m(x - x1)
+
+    For points:
+    p1 = (x1,y1) - size at minimum viewport size (x1 default  320px)
+    p2 = (x2,y2) - size at maximum viewport size (x2 default 1280px)
+    (using 320px and 1280px will create a full step each 160px)
+
+    where:
+    m = (y2 - y1) / (x2 - x1) ('Slope')
+    x = fixed value of 100vmin, 100vh or 100vw ('X-intercept')
+    b = y1 - (m * x1) ('Y-intercept')
+
+    X-axis = viewport size
+    Y-axis = element size
+
+    Substituted equation to use:
+    y = y1 + (y2 - y1) / (x2 - x1) * (x - x1)
+
+    NOTES
+    - Use VMIN for viewport width/height independed results (like fonts)
+    - Use VW/VH for viewport width/height dependend results (width,height,margin,padding)
+    - Do not use VMAX for x, it will yield results that are to large.
+
+    EXTRA
+    Helpfull hands-on graphical tool/demo I created on GeoGebra
+    'ERS linear equations' https://www.geogebra.org/m/gct3bvsp
+    (E)asy (R)esponsiveness (S)system
+*/
